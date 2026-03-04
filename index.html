@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>West Seattle Golf Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --navy-mid: #132240;
+  --navy-light: #1a3058;
+  --forest: #1a4d2e;
+  --forest-light: #2a7a47;
+  --forest-accent: #1a6b38;
+  --gold: #a8852a;
+  --gold-light: #c8a95e;
+  --cream: #f7f5f0;
+  --white: #ffffff;
+  --text-dark: #111111;
+  --text-body: #333333;
+  --text-light: #555555;
+  --text-muted: #888888;
+  --border-color: rgba(10,22,40,0.1);
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+scroll-behavior: smooth;
+scroll-snap-type: y proximity;
+}
+
+body {
+font-family: ‘Source Sans 3’, sans-serif;
+background: var(–white);
+color: var(–text-dark);
+overflow-x: hidden;
+-webkit-font-smoothing: antialiased;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 1000;
+padding: 0 3rem;
+height: 72px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+}
+
+nav.scrolled {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(20px);
+box-shadow: 0 1px 0 rgba(10,22,40,0.08);
+}
+
+.nav-logo {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.5rem;
+letter-spacing: 0.15em;
+color: var(–navy);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 0.75rem;
+}
+
+.nav-logo .logo-icon {
+width: 36px;
+height: 36px;
+border: 2px solid var(–gold);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.9rem;
+color: var(–gold);
+}
+
+.nav-links {
+display: flex;
+gap: 2rem;
+list-style: none;
+align-items: center;
+}
+
+.nav-links a {
+color: var(–text-body);
+text-decoration: none;
+font-size: 0.78rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+font-weight: 500;
+transition: color 0.3s;
+position: relative;
+}
+
+.nav-links a::after {
+content: ‘’;
+position: absolute;
+bottom: -4px;
+left: 0;
+width: 0;
+height: 1px;
+background: var(–forest);
+transition: width 0.3s;
+}
+
+.nav-links a:hover { color: var(–navy); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+background: var(–navy);
+color: var(–white) !important;
+padding: 0.55rem 1.4rem;
+border-radius: 2px;
+font-weight: 600 !important;
+transition: background 0.3s !important;
+}
+.nav-cta:hover { background: var(–forest) !important; }
+.nav-cta::after { display: none !important; }
+
+.hamburger {
+display: none;
+flex-direction: column;
+gap: 5px;
+cursor: pointer;
+z-index: 1001;
+}
+.hamburger span {
+width: 24px;
+height: 2px;
+background: var(–navy);
+transition: 0.3s;
+}
+
+/* ===== HERO ===== */
+.hero {
+height: 100vh;
+min-height: 700px;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+scroll-snap-align: start;
+}
+
+.hero-bg {
+position: absolute;
+inset: 0;
+background:
+linear-gradient(175deg, rgba(10,22,40,0.3) 0%, rgba(10,22,40,0.6) 40%, rgba(10,22,40,0.95) 100%),
+linear-gradient(135deg, var(–forest) 0%, var(–navy) 50%, var(–navy-mid) 100%);
+background-size: cover;
+}
+
+.hero-bg::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 80% 60% at 30% 40%, rgba(26,77,46,0.4) 0%, transparent 70%),
+radial-gradient(ellipse 60% 50% at 70% 60%, rgba(19,34,64,0.6) 0%, transparent 70%);
+}
+
+.hero-texture {
+position: absolute;
+inset: 0;
+opacity: 0.03;
+background-image: url(“data:image/svg+xml,%3Csvg width=‘60’ height=‘60’ viewBox=‘0 0 60 60’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cg fill=‘none’ fill-rule=‘evenodd’%3E%3Cg fill=’%23ffffff’ fill-opacity=‘1’%3E%3Cpath d=‘M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z’/%3E%3C/g%3E%3C/g%3E%3C/svg%3E”);
+}
+
+.hero-content {
+text-align: center;
+z-index: 2;
+max-width: 900px;
+padding: 0 2rem;
+animation: heroFadeIn 1.5s ease-out;
+}
+
+@keyframes heroFadeIn {
+from { opacity: 0; transform: translateY(40px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+display: inline-block;
+font-family: ‘Source Sans 3’, sans-serif;
+font-size: 0.7rem;
+letter-spacing: 0.35em;
+text-transform: uppercase;
+color: var(–gold-light);
+border: 1px solid rgba(200,169,94,0.3);
+padding: 0.5rem 1.5rem;
+margin-bottom: 2.5rem;
+animation: heroFadeIn 1.5s ease-out 0.3s both;
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(3rem, 7vw, 6.5rem);
+font-weight: 900;
+line-height: 1;
+margin-bottom: 1.5rem;
+color: var(–white);
+animation: heroFadeIn 1.5s ease-out 0.5s both;
+}
+
+.hero h1 em {
+font-style: italic;
+color: #6abf7b;
+font-weight: 400;
+}
+
+.hero-sub {
+font-size: 1.15rem;
+color: rgba(255,255,255,0.7);
+font-weight: 300;
+max-width: 560px;
+margin: 0 auto 2.5rem;
+line-height: 1.7;
+animation: heroFadeIn 1.5s ease-out 0.7s both;
+}
+
+.hero-actions {
+display: flex;
+gap: 1rem;
+justify-content: center;
+flex-wrap: wrap;
+animation: heroFadeIn 1.5s ease-out 0.9s both;
+}
+
+.btn-primary {
+background: var(–navy);
+color: var(–white);
+padding: 0.9rem 2.5rem;
+font-size: 0.78rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+font-weight: 600;
+border: none;
+cursor: pointer;
+text-decoration: none;
+transition: background 0.3s, transform 0.3s;
+}
+.btn-primary:hover { background: var(–forest); transform: translateY(-2px); }
+
+.btn-outline {
+background: transparent;
+color: var(–white);
+padding: 0.9rem 2.5rem;
+font-size: 0.78rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+font-weight: 600;
+border: 1px solid rgba(255,255,255,0.35);
+cursor: pointer;
+text-decoration: none;
+transition: border-color 0.3s, transform 0.3s, background 0.3s;
+}
+.btn-outline:hover { border-color: var(–white); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+
+.hero-scroll {
+position: absolute;
+bottom: 3rem;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+color: var(–text-muted);
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+0%, 100% { transform: translateX(-50%) translateY(0); }
+50% { transform: translateX(-50%) translateY(8px); }
+}
+
+.scroll-line {
+width: 1px;
+height: 40px;
+background: linear-gradient(to bottom, var(–gold), transparent);
+}
+
+/* ===== SECTIONS ===== */
+section {
+scroll-snap-align: start;
+}
+
+.section-pad {
+padding: 8rem 3rem;
+}
+
+.section-header {
+margin-bottom: 4rem;
+}
+
+.section-label {
+font-size: 0.7rem;
+letter-spacing: 0.35em;
+text-transform: uppercase;
+color: var(–forest-accent);
+margin-bottom: 1rem;
+display: block;
+}
+
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2.2rem, 4vw, 3.5rem);
+font-weight: 700;
+line-height: 1.15;
+margin-bottom: 1.5rem;
+color: var(–navy);
+}
+
+.section-desc {
+font-size: 1.05rem;
+color: var(–text-body);
+line-height: 1.8;
+max-width: 640px;
+font-weight: 300;
+}
+
+/* ===== ABOUT ===== */
+#about {
+background: var(–white);
+position: relative;
+}
+
+#about::before {
+content: ‘’;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 1px;
+background: linear-gradient(to right, transparent, rgba(10,22,40,0.08), transparent);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 5rem;
+max-width: 1200px;
+margin: 0 auto;
+align-items: center;
+}
+
+.about-image {
+aspect-ratio: 4/5;
+background: linear-gradient(135deg, var(–forest) 0%, var(–navy-mid) 100%);
+position: relative;
+overflow: hidden;
+}
+
+.about-image::before {
+content: ‘WSGC’;
+position: absolute;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 5rem;
+color: rgba(255,255,255,0.05);
+letter-spacing: 0.3em;
+}
+
+.about-image::after {
+content: ‘’;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+height: 40%;
+background: linear-gradient(to top, rgba(10,22,40,0.7), transparent);
+}
+
+.about-image .img-label {
+position: absolute;
+bottom: 2rem;
+left: 2rem;
+z-index: 2;
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–text-muted);
+}
+
+.about-stats {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+margin-top: 3rem;
+padding-top: 3rem;
+border-top: 1px solid rgba(10,22,40,0.08);
+}
+
+.stat-item .stat-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 2.8rem;
+color: var(–forest);
+line-height: 1;
+}
+
+.stat-item .stat-label {
+font-size: 0.75rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–text-muted);
+margin-top: 0.3rem;
+}
+
+/* Board */
+.board-section {
+margin-top: 6rem;
+max-width: 1200px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.board-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+gap: 1.5rem;
+margin-top: 2.5rem;
+}
+
+.board-card {
+background: var(–cream);
+border: 1px solid rgba(10,22,40,0.06);
+padding: 2rem;
+transition: border-color 0.3s, transform 0.3s;
+}
+
+.board-card:hover {
+border-color: var(–forest);
+transform: translateY(-4px);
+}
+
+.board-card .card-role {
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–forest-accent);
+margin-bottom: 0.75rem;
+}
+
+.board-card .card-name {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.2rem;
+margin-bottom: 0.5rem;
+color: var(–navy);
+}
+
+.board-card .card-email {
+font-size: 0.85rem;
+color: var(–text-muted);
+}
+
+/* ===== COURSE ===== */
+#course {
+background: var(–cream);
+position: relative;
+overflow: hidden;
+}
+
+.course-hero {
+height: 50vh;
+min-height: 400px;
+background: linear-gradient(to bottom, var(–navy), var(–navy-mid));
+display: flex;
+align-items: flex-end;
+padding: 4rem 3rem;
+position: relative;
+color: var(–white);
+}
+
+.course-hero::before {
+content: ‘’;
+position: absolute;
+inset: 0;
+background:
+radial-gradient(ellipse 100% 80% at 50% 30%, rgba(26,77,46,0.25) 0%, transparent 70%);
+}
+
+.course-hero .section-label { color: var(–gold-light); }
+.course-hero .section-title { color: var(–white); }
+.course-hero .section-desc { color: rgba(255,255,255,0.7); }
+
+.course-details {
+max-width: 1200px;
+margin: 0 auto;
+padding: 5rem 3rem;
+}
+
+.course-features {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 3rem;
+margin-top: 3rem;
+}
+
+.feature-card {
+padding: 2.5rem;
+border: 1px solid rgba(10,22,40,0.08);
+background: var(–white);
+transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+border-color: var(–forest);
+box-shadow: 0 8px 30px rgba(10,22,40,0.06);
+}
+
+.feature-card .feature-num {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 2rem;
+color: var(–forest);
+margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.2rem;
+margin-bottom: 0.75rem;
+color: var(–navy);
+}
+
+.feature-card p {
+color: var(–text-muted);
+font-size: 0.9rem;
+line-height: 1.7;
+}
+
+/* ===== MEMBERSHIP ===== */
+#membership {
+background: var(–white);
+position: relative;
+}
+
+.membership-content {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.membership-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+margin-top: 3rem;
+}
+
+.membership-info {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+
+.info-block h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.3rem;
+margin-bottom: 0.75rem;
+color: var(–navy);
+}
+
+.info-block p {
+color: var(–text-body);
+line-height: 1.8;
+font-size: 0.95rem;
+}
+
+.membership-cta-card {
+background: linear-gradient(145deg, var(–navy) 0%, var(–navy-mid) 100%);
+padding: 3.5rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+position: relative;
+overflow: hidden;
+color: var(–white);
+}
+
+.membership-cta-card::before {
+content: ‘’;
+position: absolute;
+top: -50%;
+right: -50%;
+width: 100%;
+height: 100%;
+background: radial-gradient(circle, rgba(200,169,94,0.08) 0%, transparent 70%);
+}
+
+.membership-cta-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 2rem;
+margin-bottom: 1rem;
+position: relative;
+color: var(–white);
+}
+
+.membership-cta-card p {
+color: rgba(255,255,255,0.7);
+line-height: 1.8;
+margin-bottom: 2rem;
+position: relative;
+}
+
+.dues-list {
+list-style: none;
+margin-bottom: 2rem;
+position: relative;
+}
+
+.dues-list li {
+padding: 0.75rem 0;
+border-bottom: 1px solid rgba(255,255,255,0.12);
+display: flex;
+justify-content: space-between;
+font-size: 0.95rem;
+color: rgba(255,255,255,0.85);
+}
+
+.dues-list li span:last-child {
+color: var(–gold-light);
+font-weight: 600;
+}
+
+/* ===== EVENTS ===== */
+#events {
+background: var(–cream);
+position: relative;
+}
+
+.events-content {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.events-carousel-wrapper {
+position: relative;
+margin-top: 3rem;
+overflow: hidden;
+}
+
+.events-carousel {
+display: flex;
+gap: 1.5rem;
+overflow-x: auto;
+scroll-snap-type: x mandatory;
+-webkit-overflow-scrolling: touch;
+scrollbar-width: none;
+padding-bottom: 1rem;
+}
+
+.events-carousel::-webkit-scrollbar { display: none; }
+
+.event-card {
+min-width: 340px;
+flex-shrink: 0;
+scroll-snap-align: start;
+background: var(–white);
+border: 1px solid rgba(10,22,40,0.08);
+overflow: hidden;
+transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+border-color: var(–forest);
+transform: translateY(-4px);
+box-shadow: 0 8px 30px rgba(10,22,40,0.08);
+}
+
+.event-card-img {
+height: 200px;
+background: linear-gradient(135deg, var(–forest) 0%, var(–navy-light) 100%);
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.event-card-img .event-icon {
+font-size: 3rem;
+opacity: 0.15;
+}
+
+.event-date-badge {
+position: absolute;
+top: 1rem;
+right: 1rem;
+background: var(–navy);
+padding: 0.5rem 0.75rem;
+text-align: center;
+min-width: 56px;
+}
+
+.event-date-badge .month {
+font-size: 0.6rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–gold);
+}
+
+.event-date-badge .day {
+font-family: ‘Bebas Neue’, sans-serif;
+font-size: 1.6rem;
+line-height: 1;
+}
+
+.event-card-body {
+padding: 1.75rem;
+}
+
+.event-card-body .event-type {
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–forest-accent);
+margin-bottom: 0.5rem;
+}
+
+.event-card-body h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.2rem;
+margin-bottom: 0.5rem;
+color: var(–navy);
+}
+
+.event-card-body p {
+color: var(–text-muted);
+font-size: 0.88rem;
+line-height: 1.6;
+margin-bottom: 1.25rem;
+}
+
+.event-link {
+color: var(–forest);
+text-decoration: none;
+font-size: 0.75rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+font-weight: 600;
+transition: color 0.3s;
+}
+.event-link:hover { color: var(–forest-light); }
+
+.carousel-nav {
+display: flex;
+gap: 0.75rem;
+margin-top: 2rem;
+}
+
+.carousel-btn {
+width: 48px;
+height: 48px;
+border: 1px solid rgba(10,22,40,0.15);
+background: transparent;
+color: var(–navy);
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.2rem;
+transition: border-color 0.3s, background 0.3s;
+}
+
+.carousel-btn:hover {
+border-color: var(–forest);
+background: rgba(26,77,46,0.06);
+}
+
+.livetourney-banner {
+margin-top: 4rem;
+padding: 2.5rem 3rem;
+background: rgba(26,77,46,0.06);
+border: 1px solid rgba(26,77,46,0.15);
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 1.5rem;
+}
+
+.livetourney-banner h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.3rem;
+color: var(–navy);
+}
+
+.livetourney-banner p {
+color: var(–text-muted);
+font-size: 0.9rem;
+margin-top: 0.3rem;
+}
+
+/* ===== GALLERY ===== */
+#gallery {
+background: var(–white);
+position: relative;
+}
+
+.gallery-content {
+max-width: 100%;
+}
+
+.gallery-carousel {
+display: flex;
+gap: 1rem;
+overflow-x: auto;
+scroll-snap-type: x mandatory;
+-webkit-overflow-scrolling: touch;
+scrollbar-width: none;
+padding: 0 3rem 1rem;
+cursor: grab;
+}
+
+.gallery-carousel::-webkit-scrollbar { display: none; }
+.gallery-carousel:active { cursor: grabbing; }
+
+.gallery-item {
+min-width: 400px;
+height: 500px;
+flex-shrink: 0;
+scroll-snap-align: start;
+position: relative;
+overflow: hidden;
+}
+
+.gallery-item .gallery-img {
+width: 100%;
+height: 100%;
+background: linear-gradient(135deg, var(–forest) 0%, var(–navy-mid) 100%);
+transition: transform 0.6s;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.gallery-item:hover .gallery-img {
+transform: scale(1.05);
+}
+
+.gallery-img .placeholder-icon {
+font-size: 3rem;
+opacity: 0.1;
+}
+
+.gallery-item .gallery-overlay {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+padding: 2rem;
+background: linear-gradient(to top, rgba(10,22,40,0.9), transparent);
+transform: translateY(20px);
+opacity: 0;
+transition: transform 0.4s, opacity 0.4s;
+}
+
+.gallery-item:hover .gallery-overlay {
+transform: translateY(0);
+opacity: 1;
+}
+
+.gallery-overlay .gallery-caption {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.1rem;
+}
+
+.gallery-overlay .gallery-date {
+font-size: 0.75rem;
+color: var(–text-muted);
+margin-top: 0.25rem;
+}
+
+.gallery-hint {
+text-align: center;
+margin-top: 2rem;
+font-size: 0.75rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–text-muted);
+}
+
+/* ===== NEWS ===== */
+#news {
+background: var(–cream);
+}
+
+.news-content {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.news-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+margin-top: 3rem;
+}
+
+.news-featured {
+grid-column: 1 / -1;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0;
+background: var(–white);
+border: 1px solid rgba(10,22,40,0.08);
+overflow: hidden;
+transition: border-color 0.3s;
+}
+
+.news-featured:hover {
+border-color: var(–forest);
+}
+
+.news-featured-img {
+background: linear-gradient(135deg, var(–forest) 0%, var(–navy) 100%);
+min-height: 300px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.news-featured-img .placeholder-icon { font-size: 3rem; opacity: 0.1; }
+
+.news-featured-body {
+padding: 3rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.news-tag {
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–forest-accent);
+margin-bottom: 0.75rem;
+}
+
+.news-featured-body h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.6rem;
+margin-bottom: 1rem;
+line-height: 1.3;
+color: var(–navy);
+}
+
+.news-featured-body p {
+color: var(–text-body);
+line-height: 1.8;
+font-size: 0.95rem;
+margin-bottom: 1.5rem;
+}
+
+.news-date {
+font-size: 0.8rem;
+color: var(–text-muted);
+}
+
+.news-card {
+background: var(–white);
+border: 1px solid rgba(10,22,40,0.08);
+padding: 2rem;
+transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.news-card:hover {
+border-color: var(–forest);
+transform: translateY(-4px);
+box-shadow: 0 8px 30px rgba(10,22,40,0.06);
+}
+
+.news-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.2rem;
+margin-bottom: 0.75rem;
+line-height: 1.3;
+color: var(–navy);
+}
+
+.news-card p {
+color: var(–text-muted);
+font-size: 0.9rem;
+line-height: 1.7;
+margin-bottom: 1rem;
+}
+
+.read-more {
+color: var(–forest);
+text-decoration: none;
+font-size: 0.75rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+font-weight: 600;
+}
+
+/* ===== CONTACT ===== */
+#contact {
+background: var(–white);
+position: relative;
+}
+
+.contact-content {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.contact-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 5rem;
+margin-top: 3rem;
+}
+
+.contact-form {
+display: flex;
+flex-direction: column;
+gap: 1.5rem;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 0.5rem;
+}
+
+.form-group label {
+font-size: 0.7rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–text-body);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+background: var(–cream);
+border: 1px solid rgba(10,22,40,0.12);
+color: var(–text-dark);
+padding: 0.9rem 1rem;
+font-family: ‘Source Sans 3’, sans-serif;
+font-size: 0.95rem;
+outline: none;
+transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+border-color: var(–forest);
+}
+
+.form-group textarea {
+resize: vertical;
+min-height: 120px;
+}
+
+.form-group select option {
+background: var(–white);
+}
+
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+}
+
+.contact-info-block {
+display: flex;
+flex-direction: column;
+gap: 2.5rem;
+}
+
+.contact-detail h4 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.1rem;
+margin-bottom: 0.5rem;
+color: var(–navy);
+}
+
+.contact-detail p {
+color: var(–text-muted);
+font-size: 0.9rem;
+line-height: 1.7;
+}
+
+.contact-detail a {
+color: var(–forest);
+text-decoration: none;
+}
+
+.contact-detail a:hover {
+color: var(–forest-light);
+}
+
+/* ===== FOOTER ===== */
+footer {
+background: var(–navy);
+border-top: none;
+padding: 4rem 3rem;
+color: var(–white);
+}
+
+.footer-content {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-wrap: wrap;
+gap: 3rem;
+}
+
+.footer-brand {
+max-width: 320px;
+}
+
+.footer-brand .nav-logo {
+margin-bottom: 1rem;
+color: var(–white);
+}
+
+.footer-brand p {
+color: rgba(255,255,255,0.5);
+font-size: 0.85rem;
+line-height: 1.7;
+}
+
+.footer-links-group h4 {
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: rgba(255,255,255,0.4);
+margin-bottom: 1.25rem;
+}
+
+.footer-links-group ul {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+
+.footer-links-group a {
+color: rgba(255,255,255,0.7);
+text-decoration: none;
+font-size: 0.88rem;
+transition: color 0.3s;
+}
+
+.footer-links-group a:hover { color: var(–white); }
+
+.footer-bottom {
+max-width: 1200px;
+margin: 3rem auto 0;
+padding-top: 2rem;
+border-top: 1px solid rgba(255,255,255,0.08);
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 0.8rem;
+color: rgba(255,255,255,0.4);
+flex-wrap: wrap;
+gap: 1rem;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal {
+opacity: 0;
+transform: translateY(40px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 1024px) {
+.course-features { grid-template-columns: 1fr 1fr; }
+.gallery-item { min-width: 320px; height: 420px; }
+}
+
+@media (max-width: 768px) {
+nav { padding: 0 1.5rem; }
+.nav-links {
+position: fixed;
+top: 0;
+right: -100%;
+width: 80%;
+max-width: 360px;
+height: 100vh;
+background: var(–white);
+flex-direction: column;
+padding: 6rem 2rem 2rem;
+gap: 1.5rem;
+transition: right 0.4s ease;
+border-left: 1px solid rgba(10,22,40,0.08);
+}
+.nav-links.open { right: 0; }
+.hamburger { display: flex; }
+
+.section-pad { padding: 5rem 1.5rem; }
+.about-grid { grid-template-columns: 1fr; gap: 3rem; }
+.about-image { aspect-ratio: 16/9; }
+.membership-grid { grid-template-columns: 1fr; }
+.course-features { grid-template-columns: 1fr; }
+.news-grid { grid-template-columns: 1fr; }
+.news-featured { grid-template-columns: 1fr; }
+.contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+.form-row { grid-template-columns: 1fr; }
+.gallery-carousel { padding: 0 1.5rem 1rem; }
+.gallery-item { min-width: 300px; height: 380px; }
+.event-card { min-width: 290px; }
+.livetourney-banner { flex-direction: column; text-align: center; }
+.footer-content { flex-direction: column; }
+.footer-bottom { flex-direction: column; text-align: center; }
+.course-hero { padding: 3rem 1.5rem; }
+.course-details { padding: 3rem 1.5rem; }
+}
+
+/* ===== MOBILE NAV OVERLAY ===== */
+.nav-overlay {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.5);
+z-index: 999;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.4s;
+}
+.nav-overlay.open {
+opacity: 1;
+pointer-events: all;
+}
+
+/* Divider line between sections */
+.section-divider {
+height: 1px;
+background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transparent);
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV OVERLAY -->
+
+<div class="nav-overlay" id="navOverlay"></div>
+
+<!-- NAVIGATION -->
+
+<nav id="mainNav">
+  <a href="#hero" class="nav-logo">
+    <span class="logo-icon">⛳</span>
+    WSGC
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeNav()">About</a></li>
+    <li><a href="#course" onclick="closeNav()">The Course</a></li>
+    <li><a href="#membership" onclick="closeNav()">Membership</a></li>
+    <li><a href="#events" onclick="closeNav()">Events</a></li>
+    <li><a href="#gallery" onclick="closeNav()">Gallery</a></li>
+    <li><a href="#news" onclick="closeNav()">News</a></li>
+    <li><a href="#contact" onclick="closeNav()" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Est. West Seattle, Washington</span>
+    <h1>Play the Game.<br><em>Own the Moment.</em></h1>
+    <p class="hero-sub">The West Seattle Golf Club is a members-only community of golfers united by a love for the game, friendly competition, and the best municipal course in the Pacific Northwest.</p>
+    <div class="hero-actions">
+      <a href="#membership" class="btn-primary">Become a Member</a>
+      <a href="#events" class="btn-outline">View Events</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ABOUT -->
+
+<section id="about" class="section-pad">
+  <div class="about-grid reveal">
+    <div class="about-image">
+      <span class="img-label">Members on the 18th, circa 2019</span>
+    </div>
+    <div>
+      <div class="section-header">
+        <span class="section-label">About the Club</span>
+        <h2 class="section-title">Built by Golfers,<br>for Golfers</h2>
+        <p class="section-desc">The West Seattle Golf Club was founded by a group of passionate local golfers who wanted more than just a round of golf — they wanted a community. What started as informal weekend matches has grown into one of Seattle's most active and welcoming golf clubs.</p>
+      </div>
+      <p class="section-desc" style="margin-top:1rem;">We are not affiliated with the course management. We are the players — organizing tournaments, building friendships, and keeping the competitive spirit alive at West Seattle Golf Course. Whether you're a scratch golfer or just finding your swing, WSGC is your home course community.</p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Active Members</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Annual Events</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">18</div>
+          <div class="stat-label">Holes of Glory</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">365</div>
+          <div class="stat-label">Days of Golf</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Board of Directors -->
+
+  <div class="board-section reveal">
+    <div class="section-header">
+      <span class="section-label">Leadership</span>
+      <h2 class="section-title">Board of Directors</h2>
+      <p class="section-desc">Our volunteer board keeps the club running, the tournaments fair, and the good times rolling.</p>
+    </div>
+    <div class="board-grid">
+      <div class="board-card">
+        <div class="card-role">President</div>
+        <div class="card-name">Board Member Name</div>
+        <div class="card-email">president@wsgc.org</div>
+      </div>
+      <div class="board-card">
+        <div class="card-role">Vice President</div>
+        <div class="card-name">Board Member Name</div>
+        <div class="card-email">vp@wsgc.org</div>
+      </div>
+      <div class="board-card">
+        <div class="card-role">Treasurer</div>
+        <div class="card-name">Board Member Name</div>
+        <div class="card-email">treasurer@wsgc.org</div>
+      </div>
+      <div class="board-card">
+        <div class="card-role">Secretary</div>
+        <div class="card-name">Board Member Name</div>
+        <div class="card-email">secretary@wsgc.org</div>
+      </div>
+      <div class="board-card">
+        <div class="card-role">Tournament Director</div>
+        <div class="card-name">Board Member Name</div>
+        <div class="card-email">tournaments@wsgc.org</div>
+      </div>
+      <div class="board-card">
+        <div class="card-role">Membership Chair</div>
+        <div class="card-name">Board Member Name</div>
+        <div class="card-email">membership@wsgc.org</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- COURSE -->
+
+<section id="course">
+  <div class="course-hero">
+    <div class="section-header" style="z-index:2;max-width:700px;">
+      <span class="section-label">The Course</span>
+      <h2 class="section-title">West Seattle Golf Course</h2>
+      <p class="section-desc">A historic public course with sweeping views of the Puget Sound, the Olympic Mountains, and the Seattle skyline. Managed by Premier Golf, this is where we play.</p>
+    </div>
+  </div>
+  <div class="course-details reveal">
+    <div class="course-features">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>A Course with History</h3>
+        <p>Originally established in 1940, West Seattle Golf Course has been a beloved fixture of the community for over eight decades. The layout has evolved but the character remains.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>Views Like No Other</h3>
+        <p>Few municipal courses in the country offer panoramic views of snow-capped mountains and open water. Several holes play along ridgelines with stunning sightlines in every direction.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Public Access</h3>
+        <p>The course is publicly owned and operated by Premier Golf. WSGC members enjoy the same access as all players, enhanced by our organized events and community.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04</div>
+        <h3>Par 72 Challenge</h3>
+        <p>At over 6,600 yards from the tips, West Seattle is a legitimate test of golf. Tight tree-lined fairways, undulating greens, and strategic bunkering reward smart play.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">05</div>
+        <h3>Year-Round Play</h3>
+        <p>Thanks to the Pacific Northwest's mild climate, the course stays open nearly every day of the year. Winter golf is real — and WSGC members embrace it fully.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">06</div>
+        <h3>Community First</h3>
+        <p>This isn't a country club course — it's a people's course. And that's exactly what makes it special. WSGC brings the club experience to public golf.</p>
+      </div>
+    </div>
+    <p style="color:var(--text-muted);font-size:0.8rem;margin-top:2rem;font-style:italic;">* Course details are subject to input from club historians. Have info to share? Reach out to the board.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- MEMBERSHIP -->
+
+<section id="membership" class="section-pad">
+  <div class="membership-content reveal">
+    <div class="section-header">
+      <span class="section-label">Membership</span>
+      <h2 class="section-title">Join the Club</h2>
+      <p class="section-desc">Becoming a member of WSGC means joining a community of golfers who take the game seriously — and themselves not so much.</p>
+    </div>
+    <div class="membership-grid">
+      <div class="membership-info">
+        <div class="info-block">
+          <h3>How It Works</h3>
+          <p>WSGC membership is open to any golfer who plays at West Seattle Golf Course. Sign up, pay your annual dues, and you're in. No initiation fees, no waitlists, no pretension. Just golf and good company.</p>
+        </div>
+        <div class="info-block">
+          <h3>What You Get</h3>
+          <p>Access to all club-organized tournaments and events throughout the season. A GHIN handicap number through the club. Voting rights on club matters. Invitations to social events, year-end banquets, and member-only competitions. Plus bragging rights.</p>
+        </div>
+        <div class="info-block">
+          <h3>Bylaws &amp; Expectations</h3>
+          <p>We operate under a simple set of bylaws that govern tournament play, membership standards, and board elections. All members are expected to maintain proper pace of play, good sportsmanship, and respect for the course and fellow players.</p>
+          <p style="margin-top:0.75rem;"><a href="#" style="color:var(--forest);text-decoration:none;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Download Bylaws (PDF) →</a></p>
+        </div>
+      </div>
+      <div class="membership-cta-card">
+        <h3>Annual Dues</h3>
+        <p>Simple, straightforward pricing. No hidden fees. Your dues fund tournaments, prizes, handicap services, and club operations.</p>
+        <ul class="dues-list">
+          <li><span>Full Membership</span><span>$XX / year</span></li>
+          <li><span>GHIN Handicap</span><span>Included</span></li>
+          <li><span>Tournament Entry</span><span>Per Event</span></li>
+          <li><span>Social Events</span><span>Included</span></li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="text-align:center;">Sign Up Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EVENTS -->
+
+<section id="events" class="section-pad">
+  <div class="events-content">
+    <div class="section-header reveal">
+      <span class="section-label">Events &amp; Tournaments</span>
+      <h2 class="section-title">Compete. Connect. Celebrate.</h2>
+      <p class="section-desc">From our season-opening scramble to the Club Championship, WSGC runs a full calendar of events designed to test your game and grow the community.</p>
+    </div>
+
+```
+<div class="events-carousel-wrapper reveal">
+  <div class="events-carousel" id="eventsCarousel">
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #132240 100%);">
+        <span class="event-icon">🏆</span>
+        <div class="event-date-badge"><span class="month">Mar</span><span class="day">15</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Season Opener</span>
+        <h3>Spring Scramble</h3>
+        <p>Kick off the season with our annual 4-person scramble. Great for new members and seasoned players alike.</p>
+        <a href="#" class="event-link">Register on LiveTourney →</a>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #132240 0%, #1a3058 100%);">
+        <span class="event-icon">⛳</span>
+        <div class="event-date-badge"><span class="month">Apr</span><span class="day">12</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Individual Stroke Play</span>
+        <h3>April Medal</h3>
+        <p>Individual net stroke play. Post a qualifying score and establish your competitive season handicap.</p>
+        <a href="#" class="event-link">Register on LiveTourney →</a>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #0a1628 100%);">
+        <span class="event-icon">🤝</span>
+        <div class="event-date-badge"><span class="month">May</span><span class="day">17</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Team Event</span>
+        <h3>Member-Guest Invitational</h3>
+        <p>Bring a guest and compete in this two-person best ball event. One of the most popular events of the year.</p>
+        <a href="#" class="event-link">Register on LiveTourney →</a>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #0a1628 0%, #1a4d2e 100%);">
+        <span class="event-icon">🎯</span>
+        <div class="event-date-badge"><span class="month">Jun</span><span class="day">21</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Match Play</span>
+        <h3>Summer Match Play Championship</h3>
+        <p>Bracket-style match play over four weeks. Test your head-to-head skills against the club's best.</p>
+        <a href="#" class="event-link">Register on LiveTourney →</a>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #132240 0%, #1a4d2e 100%);">
+        <span class="event-icon">🥇</span>
+        <div class="event-date-badge"><span class="month">Aug</span><span class="day">23</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Major</span>
+        <h3>Club Championship</h3>
+        <p>The big one. 36 holes of gross stroke play to determine the West Seattle Golf Club Champion. Flights for all skill levels.</p>
+        <a href="#" class="event-link">Register on LiveTourney →</a>
+      </div>
+    </div>
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a3058 0%, #1a4d2e 100%);">
+        <span class="event-icon">🍂</span>
+        <div class="event-date-badge"><span class="month">Oct</span><span class="day">11</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Season Finale</span>
+        <h3>Fall Classic &amp; Year-End Banquet</h3>
+        <p>Close the season in style with a final tournament followed by dinner, awards, and celebration.</p>
+        <a href="#" class="event-link">Register on LiveTourney →</a>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-nav">
+    <button class="carousel-btn" onclick="scrollCarousel('eventsCarousel', -1)">←</button>
+    <button class="carousel-btn" onclick="scrollCarousel('eventsCarousel', 1)">→</button>
+  </div>
+</div>
+
+<div class="livetourney-banner reveal">
+  <div>
+    <h3>All Events Powered by LiveTourney</h3>
+    <p>Register for events, view pairings, check live scoring, and see final results — all in one place.</p>
+  </div>
+  <a href="#" class="btn-primary">Go to LiveTourney</a>
+</div>
+```
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- GALLERY -->
+
+<section id="gallery" class="section-pad">
+  <div class="gallery-content">
+    <div style="padding:0 3rem;">
+      <div class="section-header reveal">
+        <span class="section-label">Gallery</span>
+        <h2 class="section-title">Moments on the Course</h2>
+        <p class="section-desc">Tournaments, sunsets, celebrations, and the occasional hole-in-one reaction. This is life at WSGC.</p>
+      </div>
+    </div>
+
+```
+<div class="gallery-carousel reveal" id="galleryCarousel">
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #132240 100%);"><span class="placeholder-icon">📸</span></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Club Championship Finals</span><span class="gallery-date">August 2024</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:linear-gradient(135deg, #132240 0%, #1a3058 100%);"><span class="placeholder-icon">📸</span></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Sunset on the 7th Hole</span><span class="gallery-date">July 2024</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:linear-gradient(135deg, #0a1628 0%, #1a4d2e 100%);"><span class="placeholder-icon">📸</span></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Spring Scramble Teams</span><span class="gallery-date">March 2024</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:linear-gradient(135deg, #1a3058 0%, #1a4d2e 100%);"><span class="placeholder-icon">📸</span></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Year-End Banquet</span><span class="gallery-date">October 2023</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #0a1628 100%);"><span class="placeholder-icon">📸</span></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Member-Guest Invitational</span><span class="gallery-date">May 2024</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:linear-gradient(135deg, #132240 0%, #1a4d2e 100%);"><span class="placeholder-icon">📸</span></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Olympic Mountain Views from #4</span><span class="gallery-date">June 2024</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #1a3058 100%);"><span class="placeholder-icon">📸</span></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Winter Golf — Yes, We Play</span><span class="gallery-date">January 2024</span></div>
+  </div>
+</div>
+
+<p class="gallery-hint reveal">← Swipe or drag to explore →</p>
+```
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- NEWS -->
+
+<section id="news" class="section-pad">
+  <div class="news-content">
+    <div class="section-header reveal">
+      <span class="section-label">News &amp; Updates</span>
+      <h2 class="section-title">From the Clubhouse</h2>
+      <p class="section-desc">Tournament recaps, club announcements, newsletters, and everything happening in the WSGC world.</p>
+    </div>
+
+```
+<div class="news-grid reveal">
+  <div class="news-featured">
+    <div class="news-featured-img"><span class="placeholder-icon">📰</span></div>
+    <div class="news-featured-body">
+      <span class="news-tag">Tournament Recap</span>
+      <h3>2024 Club Championship: A Season to Remember</h3>
+      <p>This year's Club Championship came down to the final hole with three players within two strokes of each other heading into the back nine of the final round. Here's how it all played out.</p>
+      <a href="#" class="read-more">Read Full Recap →</a>
+      <span class="news-date" style="margin-top:1rem;display:block;">August 25, 2024</span>
+    </div>
+  </div>
+  <div class="news-card">
+    <span class="news-tag">Announcement</span>
+    <h3>2025 Season Calendar Now Available</h3>
+    <p>The board has finalized the tournament schedule for 2025. Check out the full calendar and start planning your season.</p>
+    <a href="#" class="read-more">Read More →</a>
+    <span class="news-date" style="display:block;margin-top:1rem;">January 10, 2025</span>
+  </div>
+  <div class="news-card">
+    <span class="news-tag">Newsletter</span>
+    <h3>Winter Newsletter: Off-Season Updates</h3>
+    <p>Board elections, course condition updates, and a preview of new events planned for the upcoming season. Plus, member spotlight on our longest-tenured player.</p>
+    <a href="#" class="read-more">Read More →</a>
+    <span class="news-date" style="display:block;margin-top:1rem;">December 15, 2024</span>
+  </div>
+  <div class="news-card">
+    <span class="news-tag">Member Spotlight</span>
+    <h3>Meet the New Members of 2024</h3>
+    <p>A look at the golfers who joined WSGC this past season and the energy they've brought to our events and community.</p>
+    <a href="#" class="read-more">Read More →</a>
+    <span class="news-date" style="display:block;margin-top:1rem;">November 20, 2024</span>
+  </div>
+  <div class="news-card">
+    <span class="news-tag">Course Update</span>
+    <h3>Premier Golf Announces Green Renovation Plans</h3>
+    <p>The course management team has shared plans for upcoming improvements including green resurfacing and drainage upgrades. Here's what it means for play.</p>
+    <a href="#" class="read-more">Read More →</a>
+    <span class="news-date" style="display:block;margin-top:1rem;">October 30, 2024</span>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+
+<section id="contact" class="section-pad">
+  <div class="contact-content reveal">
+    <div class="section-header">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">We'd Love to Hear from You</h2>
+      <p class="section-desc">Whether you're interested in joining, have a question about an event, or just want to talk golf — drop us a line.</p>
+    </div>
+
+```
+<div class="contact-grid">
+  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
+    <div class="form-row">
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="John" required>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Doe" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" placeholder="john@example.com" required>
+    </div>
+    <div class="form-group">
+      <label>Subject</label>
+      <select>
+        <option>General Inquiry</option>
+        <option>Membership</option>
+        <option>Tournaments &amp; Events</option>
+        <option>Board / Leadership</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea placeholder="Your message..."></textarea>
+    </div>
+    <button type="submit" class="btn-primary" style="align-self:flex-start;">Send Message</button>
+  </form>
+
+  <div class="contact-info-block">
+    <div class="contact-detail">
+      <h4>General Inquiries</h4>
+      <p><a href="mailto:info@wsgc.org">info@wsgc.org</a></p>
+    </div>
+    <div class="contact-detail">
+      <h4>Membership</h4>
+      <p><a href="mailto:membership@wsgc.org">membership@wsgc.org</a></p>
+    </div>
+    <div class="contact-detail">
+      <h4>Tournaments</h4>
+      <p><a href="mailto:tournaments@wsgc.org">tournaments@wsgc.org</a></p>
+    </div>
+    <div class="contact-detail">
+      <h4>The Course</h4>
+      <p>West Seattle Golf Course<br>4470 35th Ave SW<br>Seattle, WA 98126</p>
+      <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-muted);font-style:italic;">Course is managed by Premier Golf.<br>For tee times and course inquiries, contact them directly.</p>
+    </div>
+    <div class="contact-detail">
+      <h4>Follow Us</h4>
+      <p style="display:flex;gap:1rem;">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">⛳</span>
+        WSGC
+      </a>
+      <p>The West Seattle Golf Club. A community of golfers playing the game we love at one of Seattle's finest public courses.</p>
+    </div>
+    <div class="footer-links-group">
+      <h4>Club</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#news">News</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">LiveTourney</a></li>
+        <li><a href="#">Bylaws (PDF)</a></li>
+        <li><a href="#">GHIN / USGA</a></li>
+        <li><a href="#">Premier Golf</a></li>
+      </ul>
+    </div>
+    <div class="footer-links-group">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 West Seattle Golf Club. All rights reserved.</span>
+    <span>Not affiliated with West Seattle Golf Course or Premier Golf.</span>
+  </div>
+</footer>
+
+<script>
+// ===== NAV SCROLL =====
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== MOBILE NAV =====
+function toggleNav() {
+  document.getElementById('navLinks').classList.toggle('open');
+  document.getElementById('navOverlay').classList.toggle('open');
+}
+function closeNav() {
+  document.getElementById('navLinks').classList.remove('open');
+  document.getElementById('navOverlay').classList.remove('open');
+}
+document.getElementById('navOverlay').addEventListener('click', closeNav);
+
+// ===== CAROUSEL SCROLL =====
+function scrollCarousel(id, dir) {
+  const el = document.getElementById(id);
+  const cardWidth = el.querySelector(':scope > *').offsetWidth + 24;
+  el.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+}
+
+// ===== TOUCH/DRAG SWIPE FOR GALLERY =====
+document.querySelectorAll('.gallery-carousel, .events-carousel').forEach(carousel => {
+  let isDown = false, startX, scrollLeft;
+
+  carousel.addEventListener('mousedown', e => {
+    isDown = true;
+    carousel.style.cursor = 'grabbing';
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+  carousel.addEventListener('mouseleave', () => { isDown = false; carousel.style.cursor = 'grab'; });
+  carousel.addEventListener('mouseup', () => { isDown = false; carousel.style.cursor = 'grab'; });
+  carousel.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    carousel.scrollLeft = scrollLeft - walk;
+  });
+
+  // Touch
+  let touchStartX;
+  carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].pageX; }, { passive: true });
+  carousel.addEventListener('touchmove', e => {
+    if (!touchStartX) return;
+  }, { passive: true });
+});
+
+// ===== SCROLL REVEAL =====
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// ===== SMOOTH SCROLL FOR NAV LINKS =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
