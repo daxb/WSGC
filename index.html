@@ -4,11 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>West Seattle Golf Club — Your Home for Municipal Golf, Est. 1940</title>
+<title>West Seattle Golf Club</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #0a1628;
+  --navy: #0f1f33;
   --navy-mid: #132240;
   --navy-light: #1a3058;
   --forest: #1a4d2e;
@@ -29,7 +29,6 @@
 
 html {
 scroll-behavior: smooth;
-scroll-snap-type: y proximity;
 }
 
 body {
@@ -82,13 +81,6 @@ align-items: center;
 justify-content: center;
 font-size: 0.9rem;
 color: var(--gold);
-}
-
-.nav-logo .logo-img {
-width: 40px;
-height: 40px;
-object-fit: contain;
-display: block;
 }
 
 .nav-links {
@@ -157,7 +149,6 @@ align-items: center;
 justify-content: center;
 position: relative;
 overflow: hidden;
-scroll-snap-align: start;
 }
 
 .hero-bg {
@@ -213,7 +204,7 @@ animation: heroFadeIn 1.5s ease-out 0.3s both;
 
 .hero h1 {
 font-family: ‘Playfair Display’, serif;
-font-size: clamp(3rem, 7vw, 6.5rem);
+font-size: clamp(2.2rem, 5vw, 4.5rem);
 font-weight: 900;
 line-height: 1;
 margin-bottom: 1.5rem;
@@ -280,6 +271,7 @@ position: absolute;
 bottom: 3rem;
 left: 50%;
 transform: translateX(-50%);
+z-index: 3;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -303,12 +295,9 @@ background: linear-gradient(to bottom, var(--gold), transparent);
 }
 
 /* ===== SECTIONS ===== */
-section {
-scroll-snap-align: start;
-}
 
 .section-pad {
-padding: 8rem 3rem;
+padding: 5rem 3rem;
 }
 
 .section-header {
@@ -1276,7 +1265,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
 
 <nav id="mainNav">
   <a href="#hero" class="nav-logo">
-    <img src="logo.png" alt="WSGC" class="logo-img">
+    <span class="logo-icon">⛳</span>
     WSGC
   </a>
   <ul class="nav-links" id="navLinks">
@@ -1299,9 +1288,9 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
   <div class="hero-bg"></div>
   <div class="hero-texture"></div>
   <div class="hero-content">
-    <span class="hero-badge">Established 1940 · West Seattle, Washington</span>
-    <h1>Play the Game.<br><em>Own the Moment.</em></h1>
-    <p class="hero-sub">Welcome to your home for municipal golf — the West Seattle Golf Club, established in 1940. A community of golfers united by a love for the game, friendly competition, and the best public course in the Pacific Northwest.</p>
+    <span class="hero-badge">Est. West Seattle, Washington</span>
+    <h1>Your home golf in West Seattle<br><em>Since 1940</em></h1>
+    <p class="hero-sub">The West Seattle Golf Club is a members-only community of golfers united by a love for the game, friendly competition, and the best municipal course in the Pacific Northwest.</p>
     <div class="hero-actions">
       <a href="#membership" class="btn-primary">Become a Member</a>
       <a href="#events" class="btn-outline">View Events</a>
@@ -1325,14 +1314,14 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <div>
       <div class="section-header">
         <span class="section-label">About the Club</span>
-        <h2 class="section-title">Built by Golfers,<br>for Golfers</h2>
-        <p class="section-desc">The West Seattle Golf Club was founded by a group of passionate local golfers who wanted more than just a round of golf — they wanted a community. What started as informal weekend matches has grown into one of Seattle's most active and welcoming golf clubs.</p>
+        <h2 class="section-title">Established in 1940,<br>for the West Seattle Golf Community</h2>
+        <p class="section-desc">The West Seattle Golf Club was founded by a group of passionate local golfers who wanted more than just a round of golf — they wanted to build community. What started as informal matches and tournaments has grown into one of Seattle's most active and welcoming golf clubs.</p>
       </div>
-      <p class="section-desc" style="margin-top:1rem;">We are not affiliated with the course management. We are the players — organizing tournaments, building friendships, and keeping the competitive spirit alive at West Seattle Golf Course. Whether you're a scratch golfer or just finding your swing, WSGC is your home course community.</p>
+      <p class="section-desc" style="margin-top:1rem;">We are not affiliated with the course management. We are the players — organizing tournaments, building friendships, and keeping the competitive spirit alive at West Seattle Golf Course. Whether you're a scratch golfer or a new to the game, WSGC is your home course community.</p>
       <div class="about-stats">
         <div class="stat-item">
-          <div class="stat-num">800+</div>
-          <div class="stat-label">Members</div>
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Active Members</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">20+</div>
@@ -1344,10 +1333,9 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
         </div>
         <div class="stat-item">
           <div class="stat-num">365</div>
-          <div class="stat-label">Days of Golf*</div>
+          <div class="stat-label">Days of Golf</div>
         </div>
       </div>
-      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem;">*weather permitting</p>
     </div>
   </div>
 
@@ -1363,32 +1351,32 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <div class="board-card">
         <div class="card-role">President</div>
         <div class="card-name">Board Member Name</div>
-        <div class="card-email">president@wsgc.org</div>
+        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52222037213b36373c2612252135317c3d2035">[email&#160;protected]</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Vice President</div>
         <div class="card-name">Board Member Name</div>
-        <div class="card-email">vp@wsgc.org</div>
+        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5a2c2a1a2d293d397435283d">[email&#160;protected]</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Treasurer</div>
         <div class="card-name">Board Member Name</div>
-        <div class="card-email">treasurer@wsgc.org</div>
+        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f5818790948680879087b582869296db9a8792">[email&#160;protected]</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Secretary</div>
         <div class="card-name">Board Member Name</div>
-        <div class="card-email">secretary@wsgc.org</div>
+        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="addec8cedfc8d9ccdfd4eddadecace83c2dfca">[email&#160;protected]</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Tournament Director</div>
         <div class="card-name">Board Member Name</div>
-        <div class="card-email">tournaments@wsgc.org</div>
+        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="364259434458575b53584245764145515518594451">[email&#160;protected]</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Membership Chair</div>
         <div class="card-name">Board Member Name</div>
-        <div class="card-email">membership@wsgc.org</div>
+        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ff2faf2fdfaedecf7f6efdfe8ecf8fcb1f0edf8">[email&#160;protected]</a></div>
       </div>
     </div>
   </div>
@@ -1403,7 +1391,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <div class="section-header" style="z-index:2;max-width:700px;">
       <span class="section-label">The Course</span>
       <h2 class="section-title">West Seattle Golf Course</h2>
-      <p class="section-desc">A historic public course with sweeping views of the Puget Sound, the Olympic Mountains, and the Seattle skyline. Managed by Premier Golf, this is where we play.</p>
+      <p class="section-desc">A historic public course with views of the Puget Sound, Mt Rainier, and the Seattle skyline. Managed by Premier Golf and owned by the City of Seattle, this is where we play.</p>
     </div>
   </div>
   <div class="course-details reveal">
@@ -1411,7 +1399,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <div class="feature-card">
         <div class="feature-num">01</div>
         <h3>A Course with History</h3>
-        <p>Originally established in 1940, West Seattle Golf Course has been a beloved fixture of the community for over eight decades. The layout has evolved but the character remains.</p>
+        <p>Originally established in 1940, West Seattle Golf Course has been a beloved fixture of the community for over eight decades. While the course and the club has evolved, our welcoming character remains.</p>
       </div>
       <div class="feature-card">
         <div class="feature-num">02</div>
@@ -1458,11 +1446,11 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <div class="membership-info">
         <div class="info-block">
           <h3>How It Works</h3>
-          <p>WSGC membership is open to any golfer who plays at West Seattle Golf Course. Sign up, pay your annual dues, and you're in. No initiation fees, no waitlists, no pretension. Just golf and good company.</p>
+          <p>WSGC membership is open to any golfer who plays at West Seattle Golf Course. Sign up, pay your annual dues, and you're part of a great community.</p>
         </div>
         <div class="info-block">
           <h3>What You Get</h3>
-          <p>Access to all club-organized tournaments and events throughout the season. A GHIN handicap number through the club. Voting rights on club matters. Invitations to social events, year-end banquets, and member-only competitions. Plus bragging rights.</p>
+          <p>Access to all club-organized tournaments and events throughout the season. A GHIN handicap number through the club and WAGolf Invitations to social events, year-end banquets, and member-only competitions.</p>
         </div>
         <div class="info-block">
           <h3>Bylaws &amp; Expectations</h3>
@@ -1472,11 +1460,10 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       </div>
       <div class="membership-cta-card">
         <h3>Annual Dues</h3>
-        <p>Simple, straightforward pricing. No hidden fees. Your dues fund tournaments, prizes, handicap services, and club operations.</p>
         <ul class="dues-list">
-          <li><span>Full Membership</span><span>$XX / year</span></li>
+          <li><span>Full Membership</span><span>$XX.XX / year</span></li>
           <li><span>GHIN Handicap</span><span>Included</span></li>
-          <li><span>Tournament Entry</span><span>Per Event</span></li>
+          <li><span>Tournament Entry</span><span>Paid Per Event</span></li>
           <li><span>Social Events</span><span>Included</span></li>
         </ul>
         <a href="#contact" class="btn-primary" style="text-align:center;">Sign Up Today</a>
@@ -1494,10 +1481,9 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <div class="section-header reveal">
       <span class="section-label">Events &amp; Tournaments</span>
       <h2 class="section-title">Compete. Connect. Celebrate.</h2>
-      <p class="section-desc">WSGC promotes golf primarily through a wide variety of competitive tournaments with full fields and high levels of organization. You'll find individual, partner and team events in both medal &amp; match play formats that reward both low gross and low net in most cases.</p>
+      <p class="section-desc">From our season-opening scramble to the Club Championship, WSGC runs a full calendar of events designed to test your game and grow the community.</p>
     </div>
 
-```
 <div class="events-carousel-wrapper reveal">
   <div class="events-carousel" id="eventsCarousel">
     <div class="event-card">
@@ -1586,7 +1572,6 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
   </div>
   <a href="#" class="btn-primary">Go to LiveTourney</a>
 </div>
-```
 
   </div>
 </section>
@@ -1605,7 +1590,6 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       </div>
     </div>
 
-```
 <div class="gallery-carousel reveal" id="galleryCarousel">
   <div class="gallery-item">
     <div class="gallery-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #132240 100%);"><span class="placeholder-icon">📸</span></div>
@@ -1638,7 +1622,6 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
 </div>
 
 <p class="gallery-hint reveal">← Swipe or drag to explore →</p>
-```
 
   </div>
 </section>
@@ -1655,48 +1638,18 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <p class="section-desc">Tournament recaps, club announcements, newsletters, and everything happening in the WSGC world.</p>
     </div>
 
-```
 <div class="news-grid reveal">
   <div class="news-featured">
     <div class="news-featured-img"><span class="placeholder-icon">📰</span></div>
     <div class="news-featured-body">
-      <span class="news-tag">Tournament Recap</span>
-      <h3>2024 Club Championship: A Season to Remember</h3>
-      <p>This year's Club Championship came down to the final hole with three players within two strokes of each other heading into the back nine of the final round. Here's how it all played out.</p>
-      <a href="#" class="read-more">Read Full Recap →</a>
-      <span class="news-date" style="margin-top:1rem;display:block;">August 25, 2024</span>
+      <span class="news-tag">Newsletter</span>
+      <h3>Winter Newsletter: Off-Season Updates</h3>
+      <p>Board elections, course condition updates, and a preview of new events planned for the upcoming season. Plus, member spotlight on our longest-tenured player.</p>
+      <a href="#" class="read-more">Read More →</a>
+      <span class="news-date" style="margin-top:1rem;display:block;">December 15, 2024</span>
     </div>
   </div>
-  <div class="news-card">
-    <span class="news-tag">Announcement</span>
-    <h3>2025 Season Calendar Now Available</h3>
-    <p>The board has finalized the tournament schedule for 2025. Check out the full calendar and start planning your season.</p>
-    <a href="#" class="read-more">Read More →</a>
-    <span class="news-date" style="display:block;margin-top:1rem;">January 10, 2025</span>
-  </div>
-  <div class="news-card">
-    <span class="news-tag">Newsletter</span>
-    <h3>Winter Newsletter: Off-Season Updates</h3>
-    <p>Board elections, course condition updates, and a preview of new events planned for the upcoming season. Plus, member spotlight on our longest-tenured player.</p>
-    <a href="#" class="read-more">Read More →</a>
-    <span class="news-date" style="display:block;margin-top:1rem;">December 15, 2024</span>
-  </div>
-  <div class="news-card">
-    <span class="news-tag">Member Spotlight</span>
-    <h3>Meet the New Members of 2024</h3>
-    <p>A look at the golfers who joined WSGC this past season and the energy they've brought to our events and community.</p>
-    <a href="#" class="read-more">Read More →</a>
-    <span class="news-date" style="display:block;margin-top:1rem;">November 20, 2024</span>
-  </div>
-  <div class="news-card">
-    <span class="news-tag">Course Update</span>
-    <h3>Premier Golf Announces Green Renovation Plans</h3>
-    <p>The course management team has shared plans for upcoming improvements including green resurfacing and drainage upgrades. Here's what it means for play.</p>
-    <a href="#" class="read-more">Read More →</a>
-    <span class="news-date" style="display:block;margin-top:1rem;">October 30, 2024</span>
-  </div>
 </div>
-```
 
   </div>
 </section>
@@ -1713,52 +1666,18 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <p class="section-desc">Whether you're interested in joining, have a question about an event, or just want to talk golf — drop us a line.</p>
     </div>
 
-```
-<div class="contact-grid">
-  <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
-    <div class="form-row">
-      <div class="form-group">
-        <label>First Name</label>
-        <input type="text" placeholder="John" required>
-      </div>
-      <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" placeholder="Doe" required>
-      </div>
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" placeholder="john@example.com" required>
-    </div>
-    <div class="form-group">
-      <label>Subject</label>
-      <select>
-        <option>General Inquiry</option>
-        <option>Membership</option>
-        <option>Tournaments &amp; Events</option>
-        <option>Board / Leadership</option>
-        <option>Other</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Message</label>
-      <textarea placeholder="Your message..."></textarea>
-    </div>
-    <button type="submit" class="btn-primary" style="align-self:flex-start;">Send Message</button>
-  </form>
-
-  <div class="contact-info-block">
+<div class="contact-info-block" style="max-width:700px;">
     <div class="contact-detail">
       <h4>General Inquiries</h4>
-      <p><a href="mailto:info@wsgc.org">info@wsgc.org</a></p>
+      <p><a href="/cdn-cgi/l/email-protection#adc4c3cbc2eddadecace83cac2c1cb"><span class="__cf_email__" data-cfemail="30595e565f70474357531e575f5c56">[email&#160;protected]</span></a></p>
     </div>
     <div class="contact-detail">
       <h4>Membership</h4>
-      <p><a href="mailto:membership@wsgc.org">membership@wsgc.org</a></p>
+      <p><a href="/cdn-cgi/l/email-protection#88e5ede5eaedfafbe0e1f8c8fffbefeba6efe7e4ee"><span class="__cf_email__" data-cfemail="dbb6beb6b9bea9a8b3b2ab9baca8bcb8f5bcb4b7bd">[email&#160;protected]</span></a></p>
     </div>
     <div class="contact-detail">
       <h4>Tournaments</h4>
-      <p><a href="mailto:tournaments@wsgc.org">tournaments@wsgc.org</a></p>
+      <p><a href="/cdn-cgi/l/email-protection#384c574d4a5659555d564c4b784f4b5f5b165f57545e"><span class="__cf_email__" data-cfemail="f1859e84839f909c949f8582b186829692df969e9d97">[email&#160;protected]</span></a></p>
     </div>
     <div class="contact-detail">
       <h4>The Course</h4>
@@ -1772,9 +1691,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
         <a href="#">Facebook</a>
       </p>
     </div>
-  </div>
 </div>
-```
 
   </div>
 </section>
@@ -1785,7 +1702,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
   <div class="footer-content">
     <div class="footer-brand">
       <a href="#hero" class="nav-logo">
-        <img src="logo.png" alt="WSGC" class="logo-img">
+        <span class="logo-icon">⛳</span>
         WSGC
       </a>
       <p>The West Seattle Golf Club. A community of golfers playing the game we love at one of Seattle's finest public courses.</p>
@@ -1823,7 +1740,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ===== NAV SCROLL =====
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
@@ -1867,38 +1784,20 @@ document.querySelectorAll('.gallery-carousel, .events-carousel').forEach(carouse
     const walk = (x - startX) * 1.5;
     carousel.scrollLeft = scrollLeft - walk;
   });
-
-  // Touch
-  let touchStartX;
-  carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].pageX; }, { passive: true });
-  carousel.addEventListener('touchmove', e => {
-    if (!touchStartX) return;
-  }, { passive: true });
 });
 
 // ===== SCROLL REVEAL =====
-const revealElements = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0.1 });
 
-revealElements.forEach(el => revealObserver.observe(el));
-
-// ===== SMOOTH SCROLL FOR NAV LINKS =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
+document.querySelectorAll('.reveal').forEach(el => {
+  revealObserver.observe(el);
 });
 </script>
-
 </body>
 </html>
