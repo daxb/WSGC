@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Bebas+Neue&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #0a1628;
+  --navy: #0f1f33;
   --navy-mid: #132240;
   --navy-light: #1a3058;
   --forest: #1a4d2e;
@@ -29,7 +29,6 @@
 
 html {
 scroll-behavior: smooth;
-scroll-snap-type: y proximity;
 }
 
 body {
@@ -150,7 +149,6 @@ align-items: center;
 justify-content: center;
 position: relative;
 overflow: hidden;
-scroll-snap-align: start;
 }
 
 .hero-bg {
@@ -206,7 +204,7 @@ animation: heroFadeIn 1.5s ease-out 0.3s both;
 
 .hero h1 {
 font-family: ‘Playfair Display’, serif;
-font-size: clamp(3rem, 7vw, 6.5rem);
+font-size: clamp(2.2rem, 5vw, 4.5rem);
 font-weight: 900;
 line-height: 1;
 margin-bottom: 1.5rem;
@@ -297,7 +295,6 @@ background: linear-gradient(to bottom, var(–gold), transparent);
 
 /* ===== SECTIONS ===== */
 section {
-scroll-snap-align: start;
 }
 
 .section-pad {
