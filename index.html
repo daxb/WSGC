@@ -181,7 +181,7 @@ background-image: url(“data:image/svg+xml,%3Csvg width=‘60’ height=‘60�
 text-align: center;
 z-index: 2;
 max-width: 900px;
-padding: 3rem 2rem 7rem;
+padding: 3rem 2rem 5rem;
 animation: heroFadeIn 1.5s ease-out;
 }
 
@@ -310,11 +310,11 @@ background: linear-gradient(to bottom, var(--gold), transparent);
 /* ===== SECTIONS ===== */
 
 .section-pad {
-padding: 5rem 3rem;
+padding: 3.5rem 3rem;
 }
 
 .section-header {
-margin-bottom: 4rem;
+margin-bottom: 2.5rem;
 }
 
 .section-label {
@@ -425,7 +425,7 @@ margin-top: 0.3rem;
 
 /* Board */
 .board-section {
-margin-top: 6rem;
+margin-top: 3rem;
 max-width: 1200px;
 margin-left: auto;
 margin-right: auto;
@@ -472,7 +472,7 @@ color: var(--text-muted);
 
 /* ===== HISTORY CAROUSEL ===== */
 .history-section {
-margin-top: 5rem;
+margin-top: 3rem;
 max-width: 1200px;
 margin-left: auto;
 margin-right: auto;
@@ -549,13 +549,13 @@ overflow: hidden;
 }
 
 .course-hero {
-height: 50vh;
+height: 62vh;
 min-height: 400px;
 background:
 linear-gradient(to bottom, rgba(10,22,40,0.45) 0%, rgba(10,22,40,0.65) 100%),
 url('media/West_Seattle_32.jpg');
 background-size: cover;
-background-position: center top;
+background-position: center 51%;
 display: flex;
 align-items: flex-end;
 padding: 4rem 3rem;
@@ -572,24 +572,24 @@ radial-gradient(ellipse 100% 80% at 50% 30%, rgba(26,77,46,0.25) 0%, transparent
 }
 
 .course-hero .section-label { color: var(--gold-light); }
-.course-hero .section-title { color: var(--white); }
+.course-hero .section-title { color: var(--white); margin-bottom: 0.15rem; }
 .course-hero .section-desc { color: rgba(255,255,255,0.7); }
 
 .course-details {
 max-width: 1200px;
 margin: 0 auto;
-padding: 5rem 3rem;
+padding: 2rem 3rem 2.5rem;
 }
 
 .course-features {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 3rem;
-margin-top: 3rem;
+gap: 1.5rem;
+margin-top: 1.5rem;
 }
 
 .feature-card {
-padding: 2.5rem;
+padding: 1.25rem 1.5rem;
 border: 1px solid rgba(10,22,40,0.08);
 background: var(--white);
 transition: border-color 0.3s, box-shadow 0.3s;
@@ -602,22 +602,22 @@ box-shadow: 0 8px 30px rgba(10,22,40,0.06);
 
 .feature-card .feature-num {
 font-family: ‘Bebas Neue’, sans-serif;
-font-size: 2rem;
+font-size: 1.5rem;
 color: var(--forest);
-margin-bottom: 1rem;
+margin-bottom: 0.4rem;
 }
 
 .feature-card h3 {
 font-family: ‘Playfair Display’, serif;
-font-size: 1.2rem;
-margin-bottom: 0.75rem;
+font-size: 1.1rem;
+margin-bottom: 0.4rem;
 color: var(--navy);
 }
 
 .feature-card p {
 color: var(--text-muted);
-font-size: 0.9rem;
-line-height: 1.7;
+font-size: 0.88rem;
+line-height: 1.6;
 }
 
 /* ===== MEMBERSHIP ===== */
@@ -635,7 +635,7 @@ margin: 0 auto;
 display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 4rem;
-margin-top: 3rem;
+margin-top: 1rem;
 }
 
 .membership-info {
@@ -726,7 +726,7 @@ margin: 0 auto;
 
 .events-carousel-wrapper {
 position: relative;
-margin-top: 3rem;
+margin-top: 1.5rem;
 overflow: hidden;
 }
 
@@ -1211,7 +1211,7 @@ color: var(--white);
 }
 
 .footer-brand p {
-color: rgba(255,255,255,0.5);
+color: rgba(255,255,255,0.8);
 font-size: 0.85rem;
 line-height: 1.7;
 }
@@ -1232,7 +1232,7 @@ gap: 0.6rem;
 }
 
 .footer-links-group a {
-color: rgba(255,255,255,0.7);
+color: rgba(255,255,255,0.9);
 text-decoration: none;
 font-size: 0.88rem;
 transition: color 0.3s;
@@ -1249,7 +1249,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 font-size: 0.8rem;
-color: rgba(255,255,255,0.4);
+color: rgba(255,255,255,0.7);
 flex-wrap: wrap;
 gap: 1rem;
 }
@@ -1854,12 +1854,12 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <div class="gallery-overlay"><span class="gallery-caption">Aerial View of the Course</span><span class="gallery-date">Summer 2025</span></div>
   </div>
   <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/18 Green through the Fog.jpg') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Morning Fog on the Fairway</span><span class="gallery-date">Early Season</span></div>
-  </div>
-  <div class="gallery-item">
     <div class="gallery-img" style="background:url('media/West_Seattle_32.jpg') center/cover;"></div>
     <div class="gallery-overlay"><span class="gallery-caption">Views of Mt. Rainier from the Fairway</span><span class="gallery-date">Summer</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:url('media/18 Green through the Fog.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Morning Fog on the Fairway</span><span class="gallery-date">Early Season</span></div>
   </div>
 </div>
 
@@ -1926,13 +1926,6 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <p>West Seattle Golf Course<br>4470 35th Ave SW<br>Seattle, WA 98126</p>
       <p style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-muted);font-style:italic;">Course is managed by Premier Golf.<br>For tee times and course inquiries, contact them directly.</p>
     </div>
-    <div class="contact-detail">
-      <h4>Follow Us</h4>
-      <p style="display:flex;gap:1rem;">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-      </p>
-    </div>
 </div>
 
   </div>
@@ -1964,14 +1957,12 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
         <li><a href="https://www.livetourney.com/league/westseattlegolfclub" target="_blank" rel="noopener">LiveTourney</a></li>
         <li><a href="media/WSGC-Bylaws-01.21.26.pdf" target="_blank" rel="noopener">Bylaws (PDF)</a></li>
         <li><a href="https://www.ghin.com/login" target="_blank" rel="noopener">GHIN / USGA</a></li>
-        <li><a href="#">Premier Golf</a></li>
+        <li><a href="https://premiergc.com/-west-seattle-golf-course" target="_blank" rel="noopener">Premier Golf — Course Site</a></li>
       </ul>
     </div>
     <div class="footer-links-group">
       <h4>Connect</h4>
       <ul>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">Facebook</a></li>
         <li><a href="#contact">Contact Us</a></li>
       </ul>
     </div>
