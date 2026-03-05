@@ -156,8 +156,9 @@ position: absolute;
 inset: 0;
 background:
 linear-gradient(175deg, rgba(10,22,40,0.3) 0%, rgba(10,22,40,0.6) 40%, rgba(10,22,40,0.95) 100%),
-linear-gradient(135deg, var(--forest) 0%, var(--navy) 50%, var(--navy-mid) 100%);
+url('media/DJI_20250603125429_0044_D.jpg');
 background-size: cover;
+background-position: center;
 }
 
 .hero-bg::before {
@@ -357,22 +358,9 @@ align-items: center;
 
 .about-image {
 aspect-ratio: 4/5;
-background: linear-gradient(135deg, var(--forest) 0%, var(--navy-mid) 100%);
+background: url(‘media/18 Green through the Fog.jpg’) center/cover no-repeat;
 position: relative;
 overflow: hidden;
-}
-
-.about-image::before {
-content: ‘WSGC’;
-position: absolute;
-inset: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: ‘Bebas Neue’, sans-serif;
-font-size: 5rem;
-color: rgba(255,255,255,0.05);
-letter-spacing: 0.3em;
 }
 
 .about-image::after {
@@ -467,6 +455,77 @@ font-size: 0.85rem;
 color: var(--text-muted);
 }
 
+/* ===== HISTORY CAROUSEL ===== */
+.history-section {
+margin-top: 5rem;
+max-width: 1200px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.history-carousel {
+display: flex;
+gap: 1.5rem;
+overflow-x: auto;
+scroll-snap-type: x mandatory;
+-webkit-overflow-scrolling: touch;
+scrollbar-width: none;
+padding: 0 0 1rem;
+cursor: grab;
+}
+
+.history-carousel::-webkit-scrollbar { display: none; }
+.history-carousel:active { cursor: grabbing; }
+
+.history-item {
+min-width: 360px;
+flex-shrink: 0;
+scroll-snap-align: start;
+overflow: hidden;
+border: 1px solid var(--border-color);
+}
+
+.history-item img {
+width: 100%;
+height: 280px;
+object-fit: cover;
+object-position: top;
+display: block;
+transition: transform 0.6s;
+}
+
+.history-item:hover img {
+transform: scale(1.03);
+}
+
+.history-caption {
+padding: 0.85rem 1.25rem;
+font-size: 0.72rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--text-muted);
+background: var(--white);
+border-top: 1px solid var(--border-color);
+}
+
+.history-item--placeholder .history-img-placeholder {
+width: 100%;
+height: 280px;
+background: linear-gradient(135deg, var(--cream) 0%, rgba(10,22,40,0.05) 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 2rem;
+opacity: 0.3;
+}
+
+/* ===== LOGO ===== */
+.logo-icon img {
+width: 22px;
+height: 22px;
+object-fit: contain;
+}
+
 /* ===== COURSE ===== */
 #course {
 background: var(--cream);
@@ -477,7 +536,11 @@ overflow: hidden;
 .course-hero {
 height: 50vh;
 min-height: 400px;
-background: linear-gradient(to bottom, var(--navy), var(--navy-mid));
+background:
+linear-gradient(to bottom, rgba(10,22,40,0.45) 0%, rgba(10,22,40,0.65) 100%),
+url('media/West_Seattle_32.jpg');
+background-size: cover;
+background-position: center top;
 display: flex;
 align-items: flex-end;
 padding: 4rem 3rem;
@@ -1265,7 +1328,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
 
 <nav id="mainNav">
   <a href="#hero" class="nav-logo">
-    <span class="logo-icon">⛳</span>
+    <span class="logo-icon"><img src="media/Fox Logo.png" alt="WSGC Fox" /></span>
     WSGC
   </a>
   <ul class="nav-links" id="navLinks">
@@ -1289,7 +1352,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
   <div class="hero-texture"></div>
   <div class="hero-content">
     <span class="hero-badge">Est. West Seattle, Washington</span>
-    <h1>Your home golf in West Seattle<br><em>Since 1940</em></h1>
+    <h1>Welcome to your home of municipal golf <br><em> The West Seattle Golf Club, established in 1940</em></h1>
     <p class="hero-sub">The West Seattle Golf Club is a members-only community of golfers united by a love for the game, friendly competition, and the best municipal course in the Pacific Northwest.</p>
     <div class="hero-actions">
       <a href="#membership" class="btn-primary">Become a Member</a>
@@ -1337,6 +1400,30 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Club History Carousel -->
+
+  <div class="history-section reveal">
+    <div class="section-header" style="margin-bottom:2rem;">
+      <span class="section-label">Club History</span>
+      <h3 class="section-title" style="font-size:1.8rem;">Through the Years</h3>
+    </div>
+    <div class="history-carousel" id="historyCarousel">
+      <div class="history-item">
+        <img src="media/West Seattle GC Opening Day Newspaper Article.jpg" alt="West Seattle Golf Course Opening Day newspaper article" />
+        <div class="history-caption">Opening Day — West Seattle Golf Course, 1940</div>
+      </div>
+      <div class="history-item history-item--placeholder">
+        <div class="history-img-placeholder">📷</div>
+        <div class="history-caption">More history photos coming soon</div>
+      </div>
+      <div class="history-item history-item--placeholder">
+        <div class="history-img-placeholder">📷</div>
+        <div class="history-caption">More history photos coming soon</div>
+      </div>
+    </div>
+    <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
   </div>
 
   <!-- Board of Directors -->
@@ -1592,32 +1679,28 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
 
 <div class="gallery-carousel reveal" id="galleryCarousel">
   <div class="gallery-item">
-    <div class="gallery-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #132240 100%);"><span class="placeholder-icon">📸</span></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Club Championship Finals</span><span class="gallery-date">August 2024</span></div>
+    <div class="gallery-img" style="background:url('media/2023 Seattle Cup Champions.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">2023 Seattle Cup Champions</span><span class="gallery-date">August 2023</span></div>
   </div>
   <div class="gallery-item">
-    <div class="gallery-img" style="background:linear-gradient(135deg, #132240 0%, #1a3058 100%);"><span class="placeholder-icon">📸</span></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Sunset on the 7th Hole</span><span class="gallery-date">July 2024</span></div>
+    <div class="gallery-img" style="background:url('media/2025 Seattle Cup II.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">2025 Seattle Cup</span><span class="gallery-date">Summer 2025</span></div>
   </div>
   <div class="gallery-item">
-    <div class="gallery-img" style="background:linear-gradient(135deg, #0a1628 0%, #1a4d2e 100%);"><span class="placeholder-icon">📸</span></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Spring Scramble Teams</span><span class="gallery-date">March 2024</span></div>
+    <div class="gallery-img" style="background:url('media/A7406241.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Members at the Clubhouse</span><span class="gallery-date">Summer 2024</span></div>
   </div>
   <div class="gallery-item">
-    <div class="gallery-img" style="background:linear-gradient(135deg, #1a3058 0%, #1a4d2e 100%);"><span class="placeholder-icon">📸</span></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Year-End Banquet</span><span class="gallery-date">October 2023</span></div>
+    <div class="gallery-img" style="background:url('media/DJI_20250603125429_0044_D.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Aerial View of the Course</span><span class="gallery-date">Summer 2025</span></div>
   </div>
   <div class="gallery-item">
-    <div class="gallery-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #0a1628 100%);"><span class="placeholder-icon">📸</span></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Member-Guest Invitational</span><span class="gallery-date">May 2024</span></div>
+    <div class="gallery-img" style="background:url('media/18 Green through the Fog.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Morning Fog on the Fairway</span><span class="gallery-date">Early Season</span></div>
   </div>
   <div class="gallery-item">
-    <div class="gallery-img" style="background:linear-gradient(135deg, #132240 0%, #1a4d2e 100%);"><span class="placeholder-icon">📸</span></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Olympic Mountain Views from #4</span><span class="gallery-date">June 2024</span></div>
-  </div>
-  <div class="gallery-item">
-    <div class="gallery-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #1a3058 100%);"><span class="placeholder-icon">📸</span></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Winter Golf — Yes, We Play</span><span class="gallery-date">January 2024</span></div>
+    <div class="gallery-img" style="background:url('media/West_Seattle_32.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Views of Mt. Rainier from the Fairway</span><span class="gallery-date">Summer</span></div>
   </div>
 </div>
 
@@ -1702,7 +1785,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
   <div class="footer-content">
     <div class="footer-brand">
       <a href="#hero" class="nav-logo">
-        <span class="logo-icon">⛳</span>
+        <span class="logo-icon"><img src="media/Fox Logo.png" alt="WSGC Fox" /></span>
         WSGC
       </a>
       <p>The West Seattle Golf Club. A community of golfers playing the game we love at one of Seattle's finest public courses.</p>
