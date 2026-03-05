@@ -534,6 +534,122 @@ font-size: 2rem;
 opacity: 0.3;
 }
 
+/* ===== TIDBITS ACCORDION ===== */
+.tidbits-section {
+  margin-top: 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 3rem 2.5rem;
+}
+
+.tidbits-section .section-header {
+  margin-bottom: 2rem;
+}
+
+.tidbit-item {
+  border-bottom: 1px solid rgba(10,22,40,0.08);
+}
+
+.tidbit-item:first-of-type {
+  border-top: 1px solid rgba(10,22,40,0.08);
+}
+
+.tidbit-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.tidbit-header:hover .tidbit-title {
+  color: var(--forest);
+}
+
+.tidbit-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  min-width: 2.2rem;
+  line-height: 1;
+}
+
+.tidbit-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--navy);
+  flex: 1;
+  transition: color 0.2s;
+}
+
+.tidbit-icon {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.tidbit-item.open .tidbit-icon {
+  transform: rotate(45deg);
+}
+
+.tidbit-body {
+  display: none;
+  padding: 0 0 1.5rem 3.2rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 0.95rem;
+  max-width: 800px;
+}
+
+.tidbit-item.open .tidbit-body {
+  display: block;
+}
+
+.tidbits-toggle {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--forest);
+  background: none;
+  border: 1px solid var(--forest);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.tidbits-toggle:hover {
+  background: var(--forest);
+  color: var(--white);
+}
+
+.tidbits-toggle-icon {
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+  line-height: 1;
+}
+
+.tidbits-toggle[aria-expanded="true"] .tidbits-toggle-icon {
+  transform: rotate(45deg);
+}
+
+.tidbits-list {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .tidbit-title { font-size: 0.95rem; }
+  .tidbit-body { padding-left: 2.8rem; }
+}
+
 /* ===== LOGO ===== */
 .logo-icon img {
 width: 28px;
@@ -1311,6 +1427,7 @@ border-left: 1px solid rgba(10,22,40,0.08);
 .footer-bottom { flex-direction: column; text-align: center; }
 .course-hero { padding: 3rem 1.5rem; }
 .course-details { padding: 3rem 1.5rem; }
+.tidbits-section { padding: 1.5rem 1.5rem 2.5rem; }
 }
 
 /* ===== MOBILE NAV OVERLAY ===== */
@@ -1436,6 +1553,10 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <h3 class="section-title" style="font-size:1.8rem;">Through the Years</h3>
     </div>
     <div class="history-carousel" id="historyCarousel">
+      <div class="history-item">
+        <img src="media/1936 Proposal to Change Name to Chandler Egan Golf Course B.jpg" alt="1936 Proposal to Change Name to Chandler Egan Golf Course" />
+        <div class="history-caption">Proposal to Rename Course After Chandler Egan — 1936</div>
+      </div>
       <div class="history-item">
         <img src="media/West Seattle GC Map of Course Prior to Opening 1940.jpg" alt="West Seattle Golf Course map prior to opening, 1940" />
         <div class="history-caption">Course Map Prior to Opening — West Seattle Golf Course, 1940</div>
@@ -1563,6 +1684,191 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     </div>
     <p style="color:var(--text-muted);font-size:0.8rem;margin-top:2rem;font-style:italic;">* Course details are subject to input from club historians. Have info to share? Reach out to the board.</p>
   </div>
+
+  <!-- Course History Tidbits -->
+
+  <div class="tidbits-section reveal">
+    <div class="section-header" style="margin-bottom:0;">
+      <span class="section-label">Did You Know?</span>
+      <h3 class="section-title" style="font-size:1.8rem;">18 Course History Tidbits</h3>
+      <button class="tidbits-toggle" onclick="toggleTidbits(this)" aria-expanded="false">
+        Show Tidbits <span class="tidbits-toggle-icon">+</span>
+      </button>
+    </div>
+
+    <div class="tidbits-list" hidden>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">01</span>
+        <span class="tidbit-title">Byron Nelson at West Seattle — 1951</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">In 1951 Byron Nelson played an exhibition at West Seattle Golf Course in front of a gallery of about 200 people. He claimed 18 PGA Tour victories during the year of "The Streak," his 1945 season in which he had 11 wins in a row. This is one of sport's unbreakable records.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">02</span>
+        <span class="tidbit-title">The Original Nines Were Reversed</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">The original course design started all players on the par 4 10th hole. Just 2 short months after the course opened, the nines were reversed as they are seen today. A blind shot on the first hole followed by par 3's on 2 and 4 were to blame for the backup of players.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">03</span>
+        <span class="tidbit-title">H. Chandler Egan: Back-to-Back US Amateur Champion</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">H. Chandler Egan, West Seattle's course architect, won back-to-back US Amateur titles in 1904 and 1905. Egan died from pneumonia in 1936 and did not see WSGC through to its opening day.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">04</span>
+        <span class="tidbit-title">The Pacific Northwest's Most Distinguished Course Designer</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">H. Chandler Egan was once the nation's top golfer and remains the Pacific Northwest's most distinguished course designer. His creations include Waverly, Eastmoreland, Riverside, and Tualatin in the Portland area, Eugene Country Club, Indian Canyon in Spokane, West Seattle, and finally one of America's most identifiable golf landmarks — Pebble Beach.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">05</span>
+        <span class="tidbit-title">Egan & MacKenzie Reshape Pebble Beach — 1929</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">In 1929, West Seattle's course architect H. Chandler Egan formed a partnership with Alister MacKenzie, the architect of Augusta National, and together they did a complete remodel of Pebble Beach. A few short years later in 1935, he began construction of West Seattle Golf Course.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">06</span>
+        <span class="tidbit-title">1953 National Public Links Championship</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">In 1953, West Seattle hosted the National Public Links Championship. Ted Williams won the event, but some of the other participants had world-class credentials: Doug Sanders — 20 wins on the PGA Tour; Tony Lema — 11 wins on tour including a British Open; and Spokane's Rod Funseth who won 3 times on Tour.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">07</span>
+        <span class="tidbit-title">A Very Difficult Par 71 in 1953</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">During the 1953 National Public Links Championship played here at West Seattle, the course played to a very difficult par 71. Hole number 12 played as a par 4 at a length of 463 yards. Hole number 14 played as a 467-yard par 4, and the original tee can still be seen directly west of the #13 green.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">08</span>
+        <span class="tidbit-title">One of the World's Best Urban Municipals</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">"The golf venue located closest to downtown may just be one of the world's best urban municipals." — <em>Best Places to Golf</em>, Sasquatch Books, 2004</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">09</span>
+        <span class="tidbit-title">Fred Couples vs. Rick Fehr — 1977</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">One of the most famous matches played at West Seattle was in 1977 where heavily favored Fred Couples (17 years old) defeated Rick Fehr (14) in the Seattle Junior Match Play Championship. The two have combined to win 17 times on the PGA Tour.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">10</span>
+        <span class="tidbit-title">Course Records Through the Eras</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">Through the maturing and lengthening of the course, we have three eras of course records:<br><br>
+        <strong>62</strong> — Palmer Smith, 5,930 yards<br>
+        <strong>63</strong> — Palmer Smith, 6,105 yards &nbsp;|&nbsp; Grant Gribble, 6,400 yards<br>
+        <strong>67</strong> — Paul Hang (West Seattle Am) / Ken Jenson (Seattle Am), 6,623 yards <em>(Competitive Course Record)</em><br>
+        <strong>66</strong> — Mark Olsen, 6,623 yards <em>(Casual Modern Course Record)</em><br>
+        <strong>63</strong> — Chris Hatch, West Seattle Amateur
+      </div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">11</span>
+        <span class="tidbit-title">Notable West Seattle Alumni</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">Kermit Zarley, who captured the 1962 NCAA Championship while playing for Houston and won twice on the PGA Tour and once on the Champions Tour, is a West Seattle alumnus — his father owned the restaurant concessions for a number of years. Other alumni include Jim McLean, a golf instructor based in Florida known worldwide, and Dave Farnam, who has won the Seattle Amateur eight times, more than anyone else.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">12</span>
+        <span class="tidbit-title">Breaking Ground: 1935–1940</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">In 1935, famed player and architect H. Chandler Egan broke ground on West Seattle Golf Course. Nearly 5 years later, in May of 1940, the course officially opened. The 128-acre facility, intersected by Longfellow Creek, was built on former mill property with the provision that construction labor be provided by the Works Progress Administration — a post-Depression federal program for the unemployed. Construction of the clubhouse commenced in 1941.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">13</span>
+        <span class="tidbit-title">Rich Beem on West Seattle's Back Nine</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">"West Seattle's back nine is probably one of the most beautiful nines you'll see anywhere," said Rich Beem, 2002 PGA Champion. "When I come back up again sometime, when I'm off duty, I'll carry my bag and walk 18. I'm a public-tract kind of guy. I like public golf courses. The food is always better at public golf courses than private golf courses. West Seattle was the first place I played in Seattle."</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">14</span>
+        <span class="tidbit-title">Opening Day: May 16, 1940</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">On May 16th, 1940, sports columnist Royal Brougham served as Master of Ceremonies at the Grand Opening of the golf course. Mayor Langlie hit the first shot. The third foursome of the day was a featured group of accomplished players: Harry Givan (State Champion and Walker Cup Member) shot the original course record of 67; Jack Westland (1952 US Amateur Champion) shot 71; Scotty Campbell (Canadian Champion and Walker Cup Member) shot 72; and Curly Huston (Jackson Park Golf Professional) rounded out the foursome.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">15</span>
+        <span class="tidbit-title">The Regrading of Holes 17 & 18</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">West Seattle's 17th and 18th fairways were regraded in the 1960s. Look for the sharp elevation change on the left side of hole 17 from about 150 yards in — this was once a continuous slope from the clubhouse all the way down to the 14th fairway. The regrading was recommended because the steepness of the hill was collecting all shots from the 18th tee down into the 17th fairway.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">16</span>
+        <span class="tidbit-title">The 18th Green's Original Location</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">The 18th green was once located where the 10th tee is today. The 10th tee was originally located where the red tee currently sits. In an effort to provide safety to the clubhouse and add some length to the 10th hole, the 18th green was rebuilt in the early 1980s where you see it today.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">17</span>
+        <span class="tidbit-title">Seattle's Municipal Golf History</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">Seattle is rich in its golf history. West Seattle opened in 1940. Jackson Park was built in 1930, and if you want to play the oldest municipal golf course west of the Mississippi, you must try Jefferson Park — which opened in 1918.</div>
+    </div>
+
+    <div class="tidbit-item">
+      <div class="tidbit-header" onclick="toggleTidbit(this)">
+        <span class="tidbit-num">18</span>
+        <span class="tidbit-title">The Course That Almost Was: Discovery Park</span>
+        <span class="tidbit-icon">+</span>
+      </div>
+      <div class="tidbit-body">Did you know that decades ago the City of Seattle had plans to build a golf course at Discovery Park? If you are familiar with this park, you can imagine that this property would have yielded one of the most striking golf courses on the West Coast. In 1934, there was also a classic course located near Aurora and Queen Anne — the Lake Union Golf Course — which was closed to make room for residential housing.</div>
+    </div>
+
+    </div><!-- /.tidbits-list -->
+  </div>
+
 </section>
 
 <div class="section-divider"></div>
@@ -2025,6 +2331,25 @@ function closeNav() {
   document.getElementById('navOverlay').classList.remove('open');
 }
 document.getElementById('navOverlay').addEventListener('click', closeNav);
+
+// ===== TIDBITS ACCORDION =====
+function toggleTidbit(header) {
+  header.parentElement.classList.toggle('open');
+}
+
+function toggleTidbits(btn) {
+  const list = btn.closest('.tidbits-section').querySelector('.tidbits-list');
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  if (expanded) {
+    list.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    btn.childNodes[0].textContent = 'Show Tidbits ';
+  } else {
+    list.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    btn.childNodes[0].textContent = 'Hide Tidbits ';
+  }
+}
 
 // ===== CAROUSEL SCROLL =====
 function scrollCarousel(id, dir) {
