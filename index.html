@@ -943,6 +943,8 @@ background: linear-gradient(to top, rgba(10,22,40,0.9), transparent);
 transform: translateY(20px);
 opacity: 0;
 transition: transform 0.4s, opacity 0.4s;
+display: flex;
+flex-direction: column;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -953,11 +955,12 @@ opacity: 1;
 .gallery-overlay .gallery-caption {
 font-family: ‘Playfair Display’, serif;
 font-size: 1.1rem;
+color: var(--white);
 }
 
 .gallery-overlay .gallery-date {
 font-size: 0.75rem;
-color: var(--text-muted);
+color: rgba(255,255,255,0.75);
 margin-top: 0.25rem;
 }
 
@@ -1418,6 +1421,13 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     </div>
   </div>
 
+  <!-- Video -->
+  <div class="reveal" style="margin-top:3rem;max-width:700px;margin-left:auto;margin-right:auto;">
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <iframe src="https://www.youtube.com/embed/mpii02UtlKY?si=xcMLyUMyuRqYMeD6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+    </div>
+  </div>
+
   <!-- Club History Carousel -->
 
   <div class="history-section reveal">
@@ -1473,33 +1483,33 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <div class="board-grid">
       <div class="board-card">
         <div class="card-role">President</div>
-        <div class="card-name">Board Member Name</div>
-        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52222037213b36373c2612252135317c3d2035">[email&#160;protected]</a></div>
+        <div class="card-name">Ted Irwin</div>
+        <div class="card-email"><a href="mailto:president@westseattlegolfclub.org">president@westseattlegolfclub.org</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Vice President</div>
-        <div class="card-name">Board Member Name</div>
-        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5a2c2a1a2d293d397435283d">[email&#160;protected]</a></div>
+        <div class="card-name">Ben Tang</div>
+        <div class="card-email"><a href="mailto:vicepresident@westseattlegolfclub.org">vicepresident@westseattlegolfclub.org</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Treasurer</div>
-        <div class="card-name">Board Member Name</div>
-        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f5818790948680879087b582869296db9a8792">[email&#160;protected]</a></div>
+        <div class="card-name">Michael Little</div>
+        <div class="card-email"><a href="mailto:treasurer@westseattlegolfclub.org">treasurer@westseattlegolfclub.org</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Secretary</div>
-        <div class="card-name">Board Member Name</div>
-        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="addec8cedfc8d9ccdfd4eddadecace83c2dfca">[email&#160;protected]</a></div>
+        <div class="card-name">Beau Gants</div>
+        <div class="card-email"><a href="mailto:secretary@westseattlegolfclub.org">secretary@westseattlegolfclub.org</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Tournament Director</div>
-        <div class="card-name">Board Member Name</div>
-        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="364259434458575b53584245764145515518594451">[email&#160;protected]</a></div>
+        <div class="card-name">Aron DeFaccio</div>
+        <div class="card-email"><a href="mailto:tournaments@westseattlegolfclub.org">tournaments@westseattlegolfclub.org</a></div>
       </div>
       <div class="board-card">
         <div class="card-role">Membership Chair</div>
-        <div class="card-name">Board Member Name</div>
-        <div class="card-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ff2faf2fdfaedecf7f6efdfe8ecf8fcb1f0edf8">[email&#160;protected]</a></div>
+        <div class="card-name">Garrett Gants</div>
+        <div class="card-email"><a href="mailto:handicaps@westseattlegolfclub.org">handicaps@westseattlegolfclub.org</a></div>
       </div>
     </div>
   </div>
@@ -1858,6 +1868,30 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <div class="gallery-overlay"><span class="gallery-caption">Views of Mt. Rainier from the Fairway</span><span class="gallery-date">Summer</span></div>
   </div>
   <div class="gallery-item">
+    <div class="gallery-img" style="background:url('media/2014 PGC Cup Champions West Seattle Large Format.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">PGC Cup Champions — West Seattle</span><span class="gallery-date">2014</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:url('media/2017 666 Prior to Shotgun.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">666 Tournament — Prior to Shotgun Start</span><span class="gallery-date">October 2017</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:url('media/20220901_115210.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">On the Course</span><span class="gallery-date">September 2022</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:url('media/20240823_144130.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Annual Banquet</span><span class="gallery-date">August 2024</span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:url('media/Grady Irvin Bench Donation.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">Grady Irvin Bench Donation</span><span class="gallery-date"></span></div>
+  </div>
+  <div class="gallery-item">
+    <div class="gallery-img" style="background:url('media/West Seattle Golf Clubs Finest Partner 2025.jpg') center/cover;"></div>
+    <div class="gallery-overlay"><span class="gallery-caption">West Seattle Golf Club's Finest — Partner</span><span class="gallery-date">2025</span></div>
+  </div>
+  <div class="gallery-item">
     <div class="gallery-img" style="background:url('media/18 Green through the Fog.jpg') center/cover;"></div>
     <div class="gallery-overlay"><span class="gallery-caption">Morning Fog on the Fairway</span><span class="gallery-date">Early Season</span></div>
   </div>
@@ -1915,11 +1949,11 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     </div>
     <div class="contact-detail">
       <h4>Membership</h4>
-      <p><a href="/cdn-cgi/l/email-protection#88e5ede5eaedfafbe0e1f8c8fffbefeba6efe7e4ee"><span class="__cf_email__" data-cfemail="dbb6beb6b9bea9a8b3b2ab9baca8bcb8f5bcb4b7bd">[email&#160;protected]</span></a></p>
+      <p><a href="mailto:president@westseattlegolfclub.org">president@westseattlegolfclub.org</a></p>
     </div>
     <div class="contact-detail">
       <h4>Tournaments</h4>
-      <p><a href="/cdn-cgi/l/email-protection#384c574d4a5659555d564c4b784f4b5f5b165f57545e"><span class="__cf_email__" data-cfemail="f1859e84839f909c949f8582b186829692df969e9d97">[email&#160;protected]</span></a></p>
+      <p><a href="mailto:tournaments@westseattlegolfclub.org">tournaments@westseattlegolfclub.org</a></p>
     </div>
     <div class="contact-detail">
       <h4>The Course</h4>
