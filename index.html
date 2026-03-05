@@ -727,7 +727,7 @@ padding-bottom: 1rem;
 .events-carousel::-webkit-scrollbar { display: none; }
 
 .event-card {
-min-width: 340px;
+min-width: 153px;
 flex-shrink: 0;
 scroll-snap-align: start;
 background: var(--white);
@@ -1578,96 +1578,207 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <div class="section-header reveal">
       <span class="section-label">Events &amp; Tournaments</span>
       <h2 class="section-title">Compete. Connect. Celebrate.</h2>
-      <p class="section-desc">From our season-opening scramble to the Club Championship, WSGC runs a full calendar of events designed to test your game and grow the community.</p>
+      <p class="section-desc">A full calendar of match play brackets, regular season events, field days, and more — all organized by your fellow members.</p>
     </div>
+
+<div class="livetourney-banner reveal" style="margin-top:2rem;">
+  <div>
+    <h3>Event Sign-Ups &amp; Results on LiveTourney</h3>
+    <p>Register for tournaments, view pairings, check live scoring, and see final results — all in one place.</p>
+  </div>
+  <a href="#" class="btn-primary">Sign Up on LiveTourney</a>
+</div>
 
 <div class="events-carousel-wrapper reveal">
   <div class="events-carousel" id="eventsCarousel">
+
+    <!-- MATCH PLAY TOURNAMENTS -->
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #132240 0%, #1a4d2e 100%);">
+        <span class="event-icon">🎯</span>
+        <div class="event-date-badge"><span class="month">Feb</span><span class="day">1</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Match Play · 64 Team Limit</span>
+        <h3>Two Person Scramble Match Play</h3>
+        <p>Teams schedule their own matches. Sign up before the start date to claim your spot in the bracket.</p>
+      </div>
+    </div>
+
     <div class="event-card">
       <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #132240 100%);">
         <span class="event-icon">🏆</span>
-        <div class="event-date-badge"><span class="month">Mar</span><span class="day">15</span></div>
+        <div class="event-date-badge"><span class="month">Mar</span><span class="day">1</span></div>
       </div>
       <div class="event-card-body">
-        <span class="event-type">Season Opener</span>
-        <h3>Spring Scramble</h3>
-        <p>Kick off the season with our annual 4-person scramble. Great for new members and seasoned players alike.</p>
-        <a href="#" class="event-link">Register on LiveTourney →</a>
+        <span class="event-type">Match Play · Max 128 Players</span>
+        <h3>President's Cup Match Play</h3>
+        <p>Individual net match play. Players schedule their own matches. Registration closes March 1st.</p>
       </div>
     </div>
-    <div class="event-card">
-      <div class="event-card-img" style="background:linear-gradient(135deg, #132240 0%, #1a3058 100%);">
-        <span class="event-icon">⛳</span>
-        <div class="event-date-badge"><span class="month">Apr</span><span class="day">12</span></div>
-      </div>
-      <div class="event-card-body">
-        <span class="event-type">Individual Stroke Play</span>
-        <h3>April Medal</h3>
-        <p>Individual net stroke play. Post a qualifying score and establish your competitive season handicap.</p>
-        <a href="#" class="event-link">Register on LiveTourney →</a>
-      </div>
-    </div>
-    <div class="event-card">
-      <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #0a1628 100%);">
-        <span class="event-icon">🤝</span>
-        <div class="event-date-badge"><span class="month">May</span><span class="day">17</span></div>
-      </div>
-      <div class="event-card-body">
-        <span class="event-type">Team Event</span>
-        <h3>Member-Guest Invitational</h3>
-        <p>Bring a guest and compete in this two-person best ball event. One of the most popular events of the year.</p>
-        <a href="#" class="event-link">Register on LiveTourney →</a>
-      </div>
-    </div>
+
     <div class="event-card">
       <div class="event-card-img" style="background:linear-gradient(135deg, #0a1628 0%, #1a4d2e 100%);">
-        <span class="event-icon">🎯</span>
-        <div class="event-date-badge"><span class="month">Jun</span><span class="day">21</span></div>
+        <span class="event-icon">🤝</span>
+        <div class="event-date-badge"><span class="month">Apr</span><span class="day">1</span></div>
       </div>
       <div class="event-card-body">
-        <span class="event-type">Match Play</span>
-        <h3>Summer Match Play Championship</h3>
-        <p>Bracket-style match play over four weeks. Test your head-to-head skills against the club's best.</p>
-        <a href="#" class="event-link">Register on LiveTourney →</a>
+        <span class="event-type">Match Play · 64 Team Limit</span>
+        <h3>Two Person Best Ball Match Play</h3>
+        <p>Two-person teams schedule their own matches. Sign up before April 1st to secure your spot.</p>
       </div>
     </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a3058 0%, #1a4d2e 100%);">
+        <span class="event-icon">☀️</span>
+        <div class="event-date-badge"><span class="month">May</span><span class="day">1</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Match Play · Max 128 Players</span>
+        <h3>Summer Match Play</h3>
+        <p>Individual net match play over the summer months. Players schedule their own matches.</p>
+      </div>
+    </div>
+
+    <!-- REGULAR SEASON -->
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #a8852a 100%);">
+        <span class="event-icon">🌱</span>
+        <div class="event-date-badge"><span class="month">Mar</span><span class="day">28</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Regular Season · Afternoon Shotgun</span>
+        <h3>Blind Draw — 1 Gross / 1 Net</h3>
+        <p>Afternoon shotgun start followed by the Spring Dinner. A great way to kick off the regular season.</p>
+      </div>
+    </div>
+
     <div class="event-card">
       <div class="event-card-img" style="background:linear-gradient(135deg, #132240 0%, #1a4d2e 100%);">
+        <span class="event-icon">⛳</span>
+        <div class="event-date-badge"><span class="month">May</span><span class="day">3</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Regular Season</span>
+        <h3>Two Person Scramble</h3>
+        <p>Partner up for this two-person scramble format. A fun and competitive event for all skill levels.</p>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #132240 100%);">
+        <span class="event-icon">🌿</span>
+        <div class="event-date-badge"><span class="month">May</span><span class="day">24</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Regular Season</span>
+        <h3>Spring Field Day</h3>
+        <p>Multiple competitions throughout the round. A classic field day format open to all members.</p>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #0a1628 0%, #1a4d2e 100%);">
         <span class="event-icon">🥇</span>
-        <div class="event-date-badge"><span class="month">Aug</span><span class="day">23</span></div>
+        <div class="event-date-badge"><span class="month">Jun</span><span class="day">6</span></div>
       </div>
       <div class="event-card-body">
         <span class="event-type">Major</span>
         <h3>Club Championship</h3>
-        <p>The big one. 36 holes of gross stroke play to determine the West Seattle Golf Club Champion. Flights for all skill levels.</p>
-        <a href="#" class="event-link">Register on LiveTourney →</a>
+        <p>18-hole qualifier and first round of matches. Determine who will be crowned WSGC Club Champion for 2026.</p>
       </div>
     </div>
+
     <div class="event-card">
-      <div class="event-card-img" style="background:linear-gradient(135deg, #1a3058 0%, #1a4d2e 100%);">
-        <span class="event-icon">🍂</span>
-        <div class="event-date-badge"><span class="month">Oct</span><span class="day">11</span></div>
+      <div class="event-card-img" style="background:linear-gradient(135deg, #132240 0%, #1a3058 100%);">
+        <span class="event-icon">⛳</span>
+        <div class="event-date-badge"><span class="month">Jun</span><span class="day">27</span></div>
       </div>
       <div class="event-card-body">
-        <span class="event-type">Season Finale</span>
-        <h3>Fall Classic &amp; Year-End Banquet</h3>
-        <p>Close the season in style with a final tournament followed by dinner, awards, and celebration.</p>
-        <a href="#" class="event-link">Register on LiveTourney →</a>
+        <span class="event-type">Regular Season</span>
+        <h3>Two Person Best Ball</h3>
+        <p>Each player plays their own ball; the best score on each hole counts. A staple of the summer schedule.</p>
       </div>
     </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #a8852a 100%);">
+        <span class="event-icon">🏅</span>
+        <div class="event-date-badge"><span class="month">Jul</span><span class="day">11</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Special Event · Jul 11–12</span>
+        <h3>West Seattle Amateur</h3>
+        <p>Hosted by Colin Gants. A two-day competitive event and one of the highlights of the summer calendar.</p>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #132240 0%, #1a4d2e 100%);">
+        <span class="event-icon">🎖️</span>
+        <div class="event-date-badge"><span class="month">Aug</span><span class="day">2</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Regular Season</span>
+        <h3>West Seattle Memorial</h3>
+        <p>An annual tribute event honoring members we've lost. A meaningful and competitive day on the course.</p>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #132240 100%);">
+        <span class="event-icon">🏆</span>
+        <div class="event-date-badge"><span class="month">Aug</span><span class="day">7</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Championship · Aug 7–8</span>
+        <h3>Senior Club Championship</h3>
+        <p>Two-day championship event for senior members. Compete for the Senior Club Championship title.</p>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #0a1628 0%, #1a3058 100%);">
+        <span class="event-icon">🤝</span>
+        <div class="event-date-badge"><span class="month">Aug</span><span class="day">22</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Special Event · Aug 22–30</span>
+        <h3>Seattle Cup</h3>
+        <p>Four rounds of competition on Aug 22, 23, 29 &amp; 30. One of the season's marquee team events.</p>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a4d2e 0%, #132240 100%);">
+        <span class="event-icon">🍂</span>
+        <div class="event-date-badge"><span class="month">Sep</span><span class="day">12</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Regular Season</span>
+        <h3>Fall Field Day</h3>
+        <p>Field day competitions as the season winds down. A fun format open to members of all skill levels.</p>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="event-card-img" style="background:linear-gradient(135deg, #1a3058 0%, #1a4d2e 100%);">
+        <span class="event-icon">🍁</span>
+        <div class="event-date-badge"><span class="month">Oct</span><span class="day">10</span></div>
+      </div>
+      <div class="event-card-body">
+        <span class="event-type">Season Finale · Afternoon Shotgun</span>
+        <h3>666 Team Event &amp; Fall Dinner</h3>
+        <p>Close the season with the 666 format followed by the Fall Dinner. Celebrate another great year of WSGC golf.</p>
+      </div>
+    </div>
+
   </div>
   <div class="carousel-nav">
     <button class="carousel-btn" onclick="scrollCarousel('eventsCarousel', -1)">←</button>
     <button class="carousel-btn" onclick="scrollCarousel('eventsCarousel', 1)">→</button>
   </div>
-</div>
-
-<div class="livetourney-banner reveal">
-  <div>
-    <h3>All Events Powered by LiveTourney</h3>
-    <p>Register for events, view pairings, check live scoring, and see final results — all in one place.</p>
-  </div>
-  <a href="#" class="btn-primary">Go to LiveTourney</a>
 </div>
 
   </div>
