@@ -781,6 +781,52 @@ line-height: 1.8;
 font-size: 0.95rem;
 }
 
+.minutes-accordion {
+border: 1px solid rgba(10,22,40,0.1);
+}
+.minutes-accordion[open] {
+border-color: rgba(26,77,46,0.25);
+}
+.minutes-summary {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 1rem 1.25rem;
+cursor: pointer;
+list-style: none;
+user-select: none;
+transition: background 0.2s;
+}
+.minutes-summary::-webkit-details-marker { display: none; }
+.minutes-summary:hover { background: rgba(26,77,46,0.04); }
+.minutes-summary h3 {
+margin-bottom: 0;
+font-size: 1.3rem;
+}
+.minutes-chevron {
+font-size: 0.7rem;
+color: var(--forest);
+transition: transform 0.25s;
+}
+.minutes-accordion[open] .minutes-chevron {
+transform: rotate(180deg);
+}
+.minutes-list {
+padding: 1.25rem 1.25rem 1.5rem;
+border-top: 1px solid rgba(10,22,40,0.08);
+display: flex;
+flex-direction: column;
+gap: 0.6rem;
+}
+.minutes-list a {
+color: var(--forest);
+text-decoration: none;
+font-size: 0.88rem;
+font-weight: 600;
+letter-spacing: 0.05em;
+}
+.minutes-list a:hover { text-decoration: underline; }
+
 .membership-cta-card {
 background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 100%);
 padding: 3.5rem;
@@ -2199,6 +2245,18 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
           <h3>Bylaws &amp; Expectations</h3>
           <p>We operate under a simple set of bylaws that govern tournament play, membership standards, and board elections. All members are expected to maintain proper pace of play, good sportsmanship, and respect for the course and fellow players.</p>
           <p style="margin-top:0.75rem;"><a href="media/WSGC-Bylaws-01.21.26.pdf" target="_blank" rel="noopener" style="color:var(--forest);text-decoration:none;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Download Bylaws (PDF) →</a></p>
+        </div>
+
+        <div class="info-block">
+          <details class="minutes-accordion">
+            <summary class="minutes-summary">
+              <h3>Meeting Minutes</h3>
+              <span class="minutes-chevron">&#9660;</span>
+            </summary>
+            <div class="minutes-list">
+              <p style="color:var(--text-muted);font-size:0.88rem;">Board meeting minutes will be posted here as they become available.</p>
+            </div>
+          </details>
         </div>
       </div>
       <div class="membership-cta-card">
