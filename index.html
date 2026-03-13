@@ -126,6 +126,18 @@ transition: background 0.3s !important;
 .nav-cta:hover { background: var(--forest) !important; }
 .nav-cta::after { display: none !important; }
 
+.nav-social a {
+display: flex;
+align-items: center;
+gap: 0.4rem;
+color: var(--text-body);
+text-decoration: none;
+transition: color 0.3s;
+}
+.nav-social a:hover { color: var(--navy); }
+.nav-social a::after { display: none !important; }
+.nav-social-label { display: none; }
+
 .hamburger {
 display: none;
 flex-direction: column;
@@ -1487,6 +1499,7 @@ border-left: 1px solid rgba(10,22,40,0.08);
 .livetourney-banner { flex-direction: column; text-align: center; }
 .footer-content { flex-direction: column; }
 .footer-bottom { flex-direction: column; text-align: center; }
+.nav-social-label { display: inline; }
 .course-hero { padding: 3rem 1.5rem; }
 .course-details { padding: 3rem 1.5rem; }
 .tidbits-section { padding: 1.5rem 1.5rem 2.5rem; }
@@ -1536,6 +1549,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <li><a href="#membership" onclick="closeNav()">Membership</a></li>
     <li><a href="#gallery" onclick="closeNav()">Gallery</a></li>
     <li><a href="#contact" onclick="closeNav()" class="nav-cta">Contact</a></li>
+    <li class="nav-social"><a href="https://www.instagram.com/westseattleheadpro/" target="_blank" rel="noopener" onclick="closeNav()" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span class="nav-social-label">Instagram</span></a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleNav()">
     <span></span><span></span><span></span>
@@ -2418,6 +2432,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <h4>Connect</h4>
       <ul>
         <li><a href="#contact">Contact Us</a></li>
+        <li><a href="https://www.instagram.com/westseattleheadpro/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.4rem;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a></li>
       </ul>
     </div>
   </div>
