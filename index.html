@@ -488,6 +488,40 @@ font-size: 0.85rem;
 color: var(--text-muted);
 }
 
+.directors-block {
+margin-top: 2.5rem;
+}
+
+.directors-block .directors-label {
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--forest-accent);
+margin-bottom: 1.25rem;
+}
+
+.directors-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+gap: 1rem;
+}
+
+.director-name {
+font-family: 'Playfair Display', serif;
+font-size: 1.05rem;
+color: var(--navy);
+padding: 0.85rem 1rem;
+background: var(--cream);
+border: 1px solid rgba(10,22,40,0.06);
+border-left: 3px solid var(--gold);
+transition: border-color 0.3s, transform 0.3s;
+}
+
+.director-name:hover {
+border-left-color: var(--forest);
+transform: translateY(-2px);
+}
+
 /* ===== HISTORY CAROUSEL ===== */
 .history-section {
 margin-top: 3rem;
@@ -1669,6 +1703,38 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
   </div>
 
+  <!-- History & People Carousel -->
+
+  <div class="history-section reveal" style="margin-top:3rem;">
+    <div class="section-header" style="margin-bottom:2rem;">
+      <span class="section-label">Faces of the Club</span>
+      <h3 class="section-title" style="font-size:1.8rem;">History &amp; People</h3>
+    </div>
+    <div class="gallery-carousel" id="peopleCarousel">
+      <div class="gallery-item">
+        <div class="gallery-img" style="background:url('media/HenryMills_2026LowAm.png') center/cover;"></div>
+        <div class="gallery-overlay"><span class="gallery-caption">Henry Mills — Low Amateur, 2026 Washington Open</span><span class="gallery-date">May 2026</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img" style="background:url('media/West Seattle Golf Clubs Finest Partner 2025.jpg') center/cover;"></div>
+        <div class="gallery-overlay"><span class="gallery-caption">WSGC's Finest Partner — 2025</span><span class="gallery-date">2025</span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img" style="background:url('media/Grady Irvin Bench Donation.jpg') center/cover;"></div>
+        <div class="gallery-overlay"><span class="gallery-caption">Grady Irvin Bench Donation</span><span class="gallery-date"></span></div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img" style="background:url('media/A7406241.jpg') center/cover;"></div>
+        <div class="gallery-overlay"><span class="gallery-caption">Members on the Clubhouse Patio</span><span class="gallery-date"></span></div>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn" onclick="scrollCarousel('peopleCarousel', -1)">←</button>
+      <button class="carousel-btn" onclick="scrollCarousel('peopleCarousel', 1)">→</button>
+    </div>
+    <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
+  </div>
+
   <!-- Board of Directors -->
 
   <div class="board-section reveal">
@@ -1707,6 +1773,23 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
         <div class="card-role">Membership Chair</div>
         <div class="card-name">Garrett Gants</div>
         <div class="card-email"><a href="mailto:handicaps@westseattlegolfclub.org">handicaps@westseattlegolfclub.org</a></div>
+      </div>
+    </div>
+    <div class="directors-block">
+      <div class="directors-label">Board Members</div>
+      <div class="directors-grid">
+        <div class="director-name">Dax Bermudez</div>
+        <div class="director-name">Colin Gants</div>
+        <div class="director-name">Wendy Gapp</div>
+        <div class="director-name">Brendan Hopps</div>
+        <div class="director-name">Dan Kramlich</div>
+        <div class="director-name">Doug Marshall</div>
+        <div class="director-name">Wes Miller</div>
+        <div class="director-name">Matt Novotny</div>
+        <div class="director-name">Chandler St. Louis</div>
+        <div class="director-name">Scott Starkey</div>
+        <div class="director-name">Milo Stover</div>
+        <div class="director-name">Mark Sullivan</div>
       </div>
     </div>
   </div>
@@ -1963,6 +2046,40 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <button class="carousel-btn" onclick="scrollCarousel('eventsCarousel', -1)">←</button>
     <button class="carousel-btn" onclick="scrollCarousel('eventsCarousel', 1)">→</button>
   </div>
+</div>
+
+<div class="event-photos-block reveal" style="margin-top:4rem;">
+  <div class="section-header" style="margin-bottom:1.5rem;">
+    <span class="section-label">Event Photos</span>
+    <h3 class="section-title" style="font-size:1.8rem;">Tournament Days</h3>
+  </div>
+  <div class="gallery-carousel" id="eventPhotosCarousel">
+    <div class="gallery-item">
+      <div class="gallery-img" style="background:url('media/2017 666 Prior to Shotgun.jpg') center/cover;"></div>
+      <div class="gallery-overlay"><span class="gallery-caption">666 Tournament — Before the Shotgun</span><span class="gallery-date">October 2017</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img" style="background:url('media/2025 Seattle Cup II.jpg') center/cover;"></div>
+      <div class="gallery-overlay"><span class="gallery-caption">2025 Seattle Cup</span><span class="gallery-date">Summer 2025</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img" style="background:url('media/2023 Seattle Cup Champions.jpg') center/cover;"></div>
+      <div class="gallery-overlay"><span class="gallery-caption">2023 Seattle Cup Champions</span><span class="gallery-date">August 2023</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img" style="background:url('media/2014 PGC Cup Champions West Seattle Large Format.jpg') center/cover;"></div>
+      <div class="gallery-overlay"><span class="gallery-caption">PGC Cup Champions — West Seattle</span><span class="gallery-date">2014</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-img" style="background:url('media/20240823_144130.jpg') center/cover;"></div>
+      <div class="gallery-overlay"><span class="gallery-caption">A Gathering in the Clubhouse</span><span class="gallery-date">August 2024</span></div>
+    </div>
+  </div>
+  <div class="carousel-nav">
+    <button class="carousel-btn" onclick="scrollCarousel('eventPhotosCarousel', -1)">←</button>
+    <button class="carousel-btn" onclick="scrollCarousel('eventPhotosCarousel', 1)">→</button>
+  </div>
+  <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
 </div>
 
   </div>
@@ -2322,43 +2439,9 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
 
 <div class="gallery-carousel reveal" id="galleryCarousel">
   <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/HenryMills_2026LowAm.png') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Henry Mills — Low Amateur, 2026 Washington Open</span><span class="gallery-date">May 2026</span></div>
-  </div>
-  <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/2023 Seattle Cup Champions.jpg') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">2023 Seattle Cup Champions</span><span class="gallery-date">August 2023</span></div>
-  </div>
-  <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/2025 Seattle Cup II.jpg') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">2025 Seattle Cup</span><span class="gallery-date">Summer 2025</span></div>
-  </div>
-
-  <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/DJI_20250603125429_0044_D.jpg') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Aerial View of the Course</span><span class="gallery-date">Summer 2025</span></div>
-  </div>
-  <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/West_Seattle_32.jpg') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Views of Mt. Rainier from the Fairway</span><span class="gallery-date">Summer</span></div>
-  </div>
-  <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/2014 PGC Cup Champions West Seattle Large Format.jpg') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">PGC Cup Champions — West Seattle</span><span class="gallery-date">2014</span></div>
-  </div>
-  <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/2017 666 Prior to Shotgun.jpg') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">666 Tournament — Prior to Shotgun Start</span><span class="gallery-date">October 2017</span></div>
-  </div>
-  <div class="gallery-item">
     <div class="gallery-img" style="background:url('media/20220901_115210.jpg') center/cover;"></div>
     <div class="gallery-overlay"><span class="gallery-caption">On the Course</span><span class="gallery-date">September 2022</span></div>
   </div>
-  <div class="gallery-item">
-    <div class="gallery-img" style="background:url('media/Grady Irvin Bench Donation.jpg') center/cover;"></div>
-    <div class="gallery-overlay"><span class="gallery-caption">Grady Irvin Bench Donation</span><span class="gallery-date"></span></div>
-  </div>
-
   <div class="gallery-item">
     <div class="gallery-img" style="background:url('media/18 Green through the Fog.jpg') center/cover;"></div>
     <div class="gallery-overlay"><span class="gallery-caption">Morning Fog on the Fairway</span><span class="gallery-date">Early Season</span></div>
