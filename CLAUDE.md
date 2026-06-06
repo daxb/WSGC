@@ -4,14 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static single-page website for the **West Seattle Golf Club (WSGC)** — a member-run golf club community (not affiliated with course management). The entire site lives in a single file: `index.html`.
+This is a static single-page website for the **West Seattle Golf Club (WSGC)** — a member-run golf club community (not affiliated with course management). The site itself is a single self-contained file, `index.html`; the repo also carries `README.md` (overview), `TECH.md` (developer reference), a `media/` directory of photos, and a `newsletters and minutes/` directory of club documents.
 
 ## Architecture
 
-`index.html` is a self-contained, ~1895-line file with three parts:
+`index.html` is a self-contained, ~2630-line file with three parts (line numbers approximate — they drift as content is added):
 
-1. **CSS** (lines ~9–1307): All styles inline in `<style>` tag. Organized by section with comments like `/* ===== NAVIGATION ===== */`.
-2. **HTML** (lines ~1308–1817): Page structure with these sections in order:
+1. **CSS** (lines ~9–1562): All styles inline in `<style>` tag. Organized by section with comments like `/* ===== NAVIGATION ===== */`.
+2. **HTML** (lines ~1565–2542): Page structure with these sections in order:
    - `nav` — fixed navbar with scroll-triggered background change and mobile hamburger
    - `.hero` — full-viewport hero with animated fade-in content
    - `#about` — club history, stats grid, board of directors cards
@@ -22,7 +22,7 @@ This is a static single-page website for the **West Seattle Golf Club (WSGC)** �
    - `#news` — news/update article cards
    - `#contact` — contact form + info
    - `footer`
-3. **JavaScript** (lines ~1818–1895): Inline `<script>` tag with:
+3. **JavaScript** (lines ~2543–2632): Inline `<script>` tag with the handlers below. Note a Cloudflare `email-decode.min.js` script is auto-injected at the top of this block (CDN-added, not part of the source) — ignore it when editing.
    - Nav scroll handler (adds `.scrolled` class)
    - Mobile nav toggle (`toggleNav()`, `closeNav()`)
    - Carousel scroll (`scrollCarousel(id, dir)`)
