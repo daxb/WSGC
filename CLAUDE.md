@@ -53,3 +53,12 @@ npx serve .
 - Interactive cards use `hover` with `translateY(-4px)` lift and border-color transitions
 - Scroll-reveal animations use `.reveal` class with IntersectionObserver
 - Mobile breakpoint is at `@media (max-width: 768px)`
+
+## Volunteer editing workflow (load-bearing)
+
+Non-technical club volunteers edit the site by submitting Pull Requests (Copilot Free drafts the
+HTML, they paste it, Dax reviews/merges). See `EDITING.md` (source of truth) and
+`docs/editing-guide.html` (printable). **Do not remove or rename the HTML-comment anchor blocks**
+in `index.html` (`NEWS / PRESIDENT'S MESSAGE`, `ADD A GALLERY PHOTO`, `ADD OR UPDATE AN EVENT`,
+`BOARD OF DIRECTORS`) — the volunteer guide and Copilot prompts locate edits by searching for
+that exact text. If you restructure a section, update the matching anchor and `EDITING.md` together.

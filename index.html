@@ -1711,6 +1711,18 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <h3 class="section-title" style="font-size:1.8rem;">History &amp; People</h3>
     </div>
     <div class="gallery-carousel" id="peopleCarousel">
+      <!-- ============================================================
+           ADD A GALLERY PHOTO:
+             1) Upload the image into the "media/" folder first.
+             2) Copy the template below here (remove the surrounding comment, keep the classes exactly).
+           Replace YOUR-FILE.jpg with the exact uploaded file name (watch capitalization & spaces).
+           - - - - - - - - - - - -
+           <div class="gallery-item">
+             <div class="gallery-img" style="background:url('media/YOUR-FILE.jpg') center/cover;"></div>
+             <div class="gallery-overlay"><span class="gallery-caption">CAPTION GOES HERE</span><span class="gallery-date">MONTH YEAR</span></div>
+           </div>
+           - - - - - - - - - - - -
+           ============================================================ -->
       <div class="gallery-item">
         <div class="gallery-img" style="background:url('media/Milo.jpeg') center/cover;"></div>
         <div class="gallery-overlay"><span class="gallery-caption">Milo Stover lets one fly — Club Championship</span><span class="gallery-date">June 2026</span></div>
@@ -1764,6 +1776,18 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <p class="section-desc">Our volunteer board keeps the club running, the tournaments fair, and the good times rolling. Our board officers can be contacted at the email addresses below.</p>
     </div>
     <div class="board-grid">
+      <!-- ============================================================
+           BOARD OF DIRECTORS:
+             - To change a name or email, edit that card directly below.
+             - To add a new officer, copy the template (remove the surrounding comment, keep the classes exactly).
+           - - - - - - - - - - - -
+           <div class="board-card">
+             <div class="card-role">ROLE TITLE</div>
+             <div class="card-name">FULL NAME</div>
+             <div class="card-email"><a href="mailto:EMAIL@westseattlegolfclub.org">EMAIL@westseattlegolfclub.org</a></div>
+           </div>
+           - - - - - - - - - - - -
+           ============================================================ -->
       <div class="board-card">
         <div class="card-role">President</div>
         <div class="card-name">Ted Irwin</div>
@@ -1837,6 +1861,26 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
 
 <div class="events-carousel-wrapper reveal">
   <div class="events-carousel" id="eventsCarousel">
+    <!-- ============================================================
+         ADD OR UPDATE AN EVENT:
+           - To change an existing event, edit its card directly (date, name, description).
+           - To add a new event, copy the template below (remove the surrounding comment, keep the classes exactly).
+         data-date is YYYY-MM-DD and controls the ordering. The badge "month"/"day" are what show on the card.
+         You can keep the same background gradient/icon as a nearby card, or reuse one you like.
+         - - - - - - - - - - - -
+         <div class="event-card" data-date="2026-MM-DD">
+           <div class="event-card-img" style="background:linear-gradient(135deg, #1a3058 0%, #0a1628 100%);">
+             <span class="event-icon">⛳</span>
+             <div class="event-date-badge"><span class="month">Mon</span><span class="day">DD</span></div>
+           </div>
+           <div class="event-card-body">
+             <span class="event-type">DATE · SERIES · FORMAT</span>
+             <h3>EVENT NAME</h3>
+             <p>SHORT DESCRIPTION.</p>
+           </div>
+         </div>
+         - - - - - - - - - - - -
+         ============================================================ -->
 
     <!-- WINTER SERIES -->
     <div class="event-card" data-date="2026-01-17">
@@ -2118,6 +2162,41 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     </div>
 
 <div class="news-grid reveal">
+  <!-- ============================================================
+       NEWS / PRESIDENT'S MESSAGE — newest item goes at the TOP.
+       The first card (.news-featured) is the big highlighted one; the rest are .news-card.
+       To publish a NEW monthly president's message:
+         1) Upload the message file into the "newsletters and minutes/" folder
+            (name it like:  Jul'26 President's Message.html).
+         2) Change the CURRENT featured card below into a regular .news-card
+            (use the NEWS CARD TEMPLATE shape).
+         3) Paste a fresh featured card here at the top using the FEATURED TEMPLATE.
+       In the link, spaces in the file name become %20 and the apostrophe stays as '.
+
+       FEATURED TEMPLATE (copy the lines between the dashes, remove the surrounding comment, keep the classes exactly):
+       - - - - - - - - - - - -
+       <div class="news-featured">
+         <div class="news-featured-img"><span class="placeholder-icon">🏆</span></div>
+         <div class="news-featured-body">
+           <span class="news-tag">President's Message</span>
+           <h3>HEADLINE GOES HERE</h3>
+           <p>SHORT SUMMARY PARAGRAPH GOES HERE.</p>
+           <a href="newsletters%20and%20minutes/MON'YY%20President's%20Message.html" class="read-more">Read More →</a>
+           <span class="news-date" style="margin-top:1rem;display:block;">MONTH YEAR</span>
+         </div>
+       </div>
+       - - - - - - - - - - - -
+       NEWS CARD TEMPLATE (for older messages / general updates):
+       - - - - - - - - - - - -
+       <div class="news-card reveal">
+         <span class="news-tag">President's Message</span>
+         <h3>HEADLINE GOES HERE</h3>
+         <p>SHORT SUMMARY PARAGRAPH GOES HERE.</p>
+         <a href="newsletters%20and%20minutes/MON'YY%20President's%20Message.html" class="read-more">Read More →</a>
+         <span class="news-date" style="margin-top:1rem;display:block;">MONTH YEAR</span>
+       </div>
+       - - - - - - - - - - - -
+       ============================================================ -->
   <div class="news-featured">
     <div class="news-featured-img"><span class="placeholder-icon">🏆</span></div>
     <div class="news-featured-body">

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Editing the WSGC Website — Volunteer Guide</title>
+<style>
+  :root { --navy:#0f1f33; --forest:#1a4d2e; --gold:#a8852a; --ink:#222; --muted:#555; --line:#d8d2c4; --cream:#f7f5f0; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         color: var(--ink); line-height: 1.55; max-width: 820px; margin: 0 auto; padding: 2.2rem 1.3rem 4rem; }
+  h1 { color: var(--navy); border-bottom: 3px solid var(--gold); padding-bottom: .4rem; margin-bottom: .3rem; }
+  h2 { color: var(--forest); margin-top: 2.2rem; border-bottom: 1px solid var(--line); padding-bottom: .25rem; }
+  h3 { color: var(--navy); margin-top: 1.4rem; }
+  .lede { color: var(--muted); font-size: 1.02rem; }
+  .rule { background: #fbf6e6; border: 1px solid var(--gold); border-radius: 8px; padding: .9rem 1.1rem; margin: 1.2rem 0; }
+  .rule strong { color: var(--navy); }
+  .note { background: var(--cream); border-left: 4px solid var(--forest); padding: .7rem 1rem; margin: 1rem 0; font-size: .96rem; }
+  .flow { background: var(--navy); color: #fff; border-radius: 8px; padding: .8rem 1rem; font-size: .95rem; text-align: center; }
+  ol, ul { padding-left: 1.4rem; }
+  li { margin: .35rem 0; }
+  code { background: #eee7d6; padding: .08rem .35rem; border-radius: 4px; font-size: .9em; }
+  .prompt { background: #f4f1ea; border: 1px solid var(--line); border-left: 4px solid var(--gold);
+            border-radius: 6px; padding: .7rem .9rem; margin: .6rem 0; font-size: .92rem; }
+  .shot { border: 2px dashed #bbb; color: #999; text-align: center; padding: 1.4rem; border-radius: 8px;
+          margin: .8rem 0; font-size: .9rem; background: #fafafa; }
+  .track { border: 1px solid var(--line); border-radius: 10px; padding: .2rem 1.2rem 1.2rem; margin: 1.4rem 0; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  a { color: var(--forest); }
+  @media print {
+    body { max-width: none; padding: 0; font-size: 11pt; }
+    h2 { page-break-after: avoid; } h3 { page-break-after: avoid; }
+    .track, .rule, .note, .prompt { page-break-inside: avoid; }
+    .shot { border-color: #ccc; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Editing the WSGC Website</h1>
+<p class="lede"><strong>Volunteer Guide.</strong> For club members who help keep
+westseattlegolfclub.org up to date. <strong>No coding required.</strong> You describe the change
+in plain English, an AI assistant (GitHub Copilot) writes the small bit of HTML, and you submit it
+for review. Dax checks every change before it goes live — you can't break anything.</p>
+
+<div class="rule">
+<strong>The one rule:</strong> Never change the live site directly. Always submit a
+<em>Pull Request</em> and let Dax publish it. Nothing you do reaches the public site until Dax merges it.
+</div>
+
+<h2>Words you'll see</h2>
+<ul>
+  <li><strong>Repository (repo)</strong> — the folder holding the website: <code>daxb/WSGC</code> on GitHub.</li>
+  <li><strong>Branch</strong> — a safe scratch copy to work on. GitHub makes one for you each time.</li>
+  <li><strong>Commit</strong> — saving your change onto that branch.</li>
+  <li><strong>Pull Request (PR)</strong> — "please review &amp; publish my change." This is what you send to Dax.</li>
+  <li><strong>Merge</strong> — Dax's job. When he merges, the site updates automatically in ~1 minute.</li>
+</ul>
+<p>You only ever do: <strong>make a branch → commit → open a PR.</strong> Dax does the rest.</p>
+
+<h2>Before you start (one time)</h2>
+<ol>
+  <li>Make a free account at <a href="https://github.com">github.com</a>.</li>
+  <li>Accept Dax's email invitation to the <code>daxb/WSGC</code> repository (click <strong>Accept invitation</strong>).</li>
+  <li>That's it — everything else is in your web browser, nothing to install.</li>
+</ol>
+
+<div class="flow">You describe + paste the change → You open a Pull Request → Dax reviews &amp; merges → Site updates (~1 min)</div>
+
+<div class="track">
+<h2>Track A — Photos &amp; documents (the easy stuff)</h2>
+<p>For <strong>gallery photos</strong> and <strong>newsletters / meeting minutes</strong>. Just uploading a file — no code.</p>
+<h3>Add gallery photos</h3>
+<ol>
+  <li>Go to <a href="https://github.com/daxb/WSGC">github.com/daxb/WSGC</a> and open the <code>media</code> folder.</li>
+  <li>Click <strong>Add file ▾ → Upload files</strong> and drag your photo in. Use a simple name like
+      <code>summer-scramble-2026.jpg</code> and <strong>remember it exactly</strong> (you'll need it in Track B).</li>
+  <li>Choose <strong>"Create a new branch for this commit and start a pull request."</strong></li>
+  <li>Click <strong>Propose changes</strong>, then <strong>Create pull request</strong>. Done.</li>
+</ol>
+<div class="shot">[ Screenshot: the "Upload files" + "Create a new branch… start a pull request" screen ]</div>
+<div class="note">Uploading makes the photo available, but it won't appear on the page until a caption
+entry is added — that's <strong>Track B → "Add a gallery photo."</strong></div>
+<h3>Post a newsletter or meeting minutes</h3>
+<p>Same steps, but use the <code>newsletters and minutes</code> folder and upload the PDF, named like
+<code>Jul'26 Meeting Minutes.pdf</code>.</p>
+</div>
+
+<div class="track">
+<h2>Track B — Text changes (Copilot writes the HTML)</h2>
+<p>For the <strong>president's message, news, events, board members,</strong> and photo captions.</p>
+
+<h3>Step 1 — Ask Copilot for the snippet</h3>
+<ol>
+  <li>Go to <a href="https://github.com/copilot">github.com/copilot</a>.</li>
+  <li>Make sure the mode button says <strong>Ask</strong>.</li>
+  <li>Click the repository button and select <strong>daxb/WSGC</strong> (so Copilot can match the site's style).</li>
+  <li>Paste a ready-made prompt below, fill in the blanks, and send.</li>
+  <li>Copilot replies with HTML — click the <strong>copy</strong> button on that block.</li>
+</ol>
+<div class="shot">[ Screenshot: github.com/copilot with "Ask" mode and daxb/WSGC selected ]</div>
+<div class="note"><strong>What free Copilot can/can't do:</strong> it <em>writes</em> the snippet but won't
+edit the site itself — you'll paste it in (Step 2). The free plan allows about <strong>50 messages/month</strong>.
+Stuck? Just describe what you want in your Pull Request and Dax will finish it.</div>
+
+<h3>Ready-made prompts (copy, fill blanks)</h3>
+<div class="note"><strong>New president's message has TWO parts:</strong> a full web page (an
+<code>.html</code> file) <em>and</em> a card on the home page that links to it. Do both in one PR.</div>
+<div class="prompt"><strong>Part 1 — create the page.</strong> Ask Copilot: <em>"Using the daxb/WSGC repo,
+look at <code>newsletters and minutes/Jun'26 President's Message.html</code>. Write a complete new page
+just like it (same layout, styles, header, footer) for the MONTH YEAR message. Message text: '____'.
+Give me the entire HTML file."</em> Then on github.com/daxb/WSGC open the <code>newsletters and minutes</code>
+folder → <strong>Add file ▾ → Create new file</strong> → name it like <code>Jul'26 President's Message.html</code>
+→ paste → <strong>Commit → "Create a new branch… start a pull request."</strong>
+<br><em>Too much? Skip Part 1 and ask Dax to create the page; just do Part 2 and mention it in your PR.</em></div>
+<div class="prompt"><strong>Part 2 — add the card.</strong> Ask Copilot: <em>"In daxb/WSGC index.html near
+"NEWS / PRESIDENT'S MESSAGE", write a new featured news card titled '____', summary '____', dated 'Month
+Year', linking to <code>newsletters and minutes/MON'YY President's Message.html</code>. Also show how to turn
+the current featured card into a regular news card. Match the existing markup."</em></div>
+<div class="prompt"><strong>News update:</strong> In daxb/WSGC index.html near "NEWS / PRESIDENT'S MESSAGE",
+write a regular news card titled "____", summary "____", dated "Month Year". Match the existing markup.</div>
+<div class="prompt"><strong>Gallery photo:</strong> In daxb/WSGC index.html near "ADD A GALLERY PHOTO",
+write a gallery-item entry for <code>media/MY-FILE.jpg</code> with caption "____" and date "Month Year".
+Match the existing markup.</div>
+<div class="prompt"><strong>Event:</strong> In daxb/WSGC index.html near "ADD OR UPDATE AN EVENT", write
+an event card for "Event Name" on DATE, format "____", description "____". Match the existing markup.</div>
+<div class="prompt"><strong>Board member:</strong> In daxb/WSGC index.html near "BOARD OF DIRECTORS",
+the "Role" card should read name "____" and email "____@westseattlegolfclub.org". Show the corrected card.</div>
+
+<h3>Step 2 — Paste it into the website</h3>
+<ol>
+  <li>Open <a href="https://github.com/daxb/WSGC">github.com/daxb/WSGC</a> and click <code>index.html</code>.</li>
+  <li>Click the <strong>pencil icon (✏️)</strong> to edit.</li>
+  <li>Press <strong>Ctrl+F / Cmd+F</strong> and search the anchor: <code>NEWS / PRESIDENT'S MESSAGE</code>,
+      <code>ADD A GALLERY PHOTO</code>, <code>ADD OR UPDATE AN EVENT</code>, or <code>BOARD OF DIRECTORS</code>.</li>
+  <li>Paste Copilot's snippet just below that comment block (add news/photos at the <strong>top</strong>).</li>
+  <li>Optional: click the <strong>Preview</strong> tab to glance at it.</li>
+</ol>
+<div class="shot">[ Screenshot: editing index.html with the pencil + the anchor comment visible ]</div>
+
+<h3>Step 3 — Submit for review</h3>
+<ol>
+  <li>Click <strong>Commit changes…</strong></li>
+  <li>Choose <strong>"Create a new branch for this commit and start a pull request."</strong></li>
+  <li>Add a short message (e.g. "Add June president's message") → <strong>Propose changes</strong>.</li>
+  <li>Click <strong>Create pull request</strong>. 🎉 Done — Dax takes it from here.</li>
+</ol>
+<div class="shot">[ Screenshot: the "Commit changes" dialog with the new-branch option chosen ]</div>
+</div>
+
+<h2>Optional shortcut</h2>
+<p>On the repo page, press the <strong>.</strong> (period) key to open a web editor (github.dev). If a
+Copilot panel appears, you can edit and open a PR there. It may not be available on the free plan — if
+you don't see it, just use Track B.</p>
+
+<h2>If something looks wrong</h2>
+<ul>
+  <li>Don't panic — you can't publish anyway; only Dax can. The live site is never affected by an unmerged PR.</li>
+  <li>Leave a comment on your Pull Request explaining the confusion, and Dax will sort it out.</li>
+  <li>Closed something by accident? Just start a fresh change. Nothing is lost.</li>
+</ul>
+
+<footer>
+This printable guide mirrors <code>EDITING.md</code> in the repository, which is the source of truth.
+To save as PDF: use your browser's <strong>Print → Save as PDF</strong>. Screenshots marked
+<em>[ Screenshot: … ]</em> are to be added from the live GitHub screens.
+</footer>
+
+</body>
+</html>
