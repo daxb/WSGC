@@ -32,7 +32,7 @@ scroll-behavior: smooth;
 }
 
 body {
-font-family: ‘Source Sans 3’, sans-serif;
+font-family: 'Source Sans 3', sans-serif;
 background: var(--white);
 color: var(--text-dark);
 overflow-x: hidden;
@@ -61,7 +61,7 @@ box-shadow: 0 1px 0 rgba(10,22,40,0.08);
 }
 
 .nav-logo {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 2.07rem;
 letter-spacing: 0.03em;
 color: var(--navy);
@@ -102,7 +102,7 @@ position: relative;
 }
 
 .nav-links a::after {
-content: ‘’;
+content: '';
 position: absolute;
 bottom: -4px;
 left: 0;
@@ -152,6 +152,19 @@ background: var(--navy);
 transition: 0.3s;
 }
 
+/* Over the hero photo the bar is transparent, so nav text turns light;
+   nav.scrolled brings back the white bar with the dark text above. */
+nav:not(.scrolled) .nav-logo,
+nav:not(.scrolled) .nav-links a,
+nav:not(.scrolled) .nav-social a {
+color: rgba(255,255,255,0.94);
+text-shadow: 0 1px 5px rgba(0,0,0,0.65);
+}
+nav:not(.scrolled) .nav-links a:hover,
+nav:not(.scrolled) .nav-social a:hover { color: var(--white); }
+nav:not(.scrolled) .nav-logo .logo-icon { border-color: var(--gold-light); }
+nav:not(.scrolled) .hamburger span { background: var(--white); }
+
 /* ===== HERO ===== */
 .hero {
 height: 100vh;
@@ -167,26 +180,28 @@ overflow: hidden;
 position: absolute;
 inset: 0;
 background:
-linear-gradient(175deg, rgba(10,22,40,0.1) 0%, rgba(10,22,40,0.35) 40%, rgba(10,22,40,0.75) 100%),
+linear-gradient(178deg, rgba(10,22,40,0.55) 0%, rgba(10,22,40,0.42) 35%, rgba(10,22,40,0.5) 65%, rgba(10,22,40,0.85) 100%),
 url('media/DJI_20250603125429_0044_D.jpg');
 background-size: cover;
 background-position: center;
 }
 
+/* Soft scrim centered behind the hero copy so the text never fights the photo */
 .hero-bg::before {
-content: ‘’;
+content: '';
 position: absolute;
 inset: 0;
 background:
-radial-gradient(ellipse 80% 60% at 30% 40%, rgba(26,77,46,0.4) 0%, transparent 70%),
-radial-gradient(ellipse 60% 50% at 70% 60%, rgba(19,34,64,0.6) 0%, transparent 70%);
+radial-gradient(ellipse 65% 55% at 50% 42%, rgba(8,18,32,0.62) 0%, rgba(8,18,32,0.35) 55%, transparent 80%),
+radial-gradient(ellipse 80% 60% at 30% 40%, rgba(26,77,46,0.28) 0%, transparent 70%),
+radial-gradient(ellipse 60% 50% at 70% 60%, rgba(19,34,64,0.45) 0%, transparent 70%);
 }
 
 .hero-texture {
 position: absolute;
 inset: 0;
 opacity: 0.03;
-background-image: url(“data:image/svg+xml,%3Csvg width=‘60’ height=‘60’ viewBox=‘0 0 60 60’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cg fill=‘none’ fill-rule=‘evenodd’%3E%3Cg fill=’%23ffffff’ fill-opacity=‘1’%3E%3Cpath d=‘M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z’/%3E%3C/g%3E%3C/g%3E%3C/svg%3E”);
+background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .hero-content {
@@ -204,35 +219,36 @@ to { opacity: 1; transform: translateY(0); }
 
 .hero-badge {
 display: inline-block;
-font-family: ‘Source Sans 3’, sans-serif;
+font-family: 'Source Sans 3', sans-serif;
 font-size: 0.77rem;
 font-weight: 750;
 letter-spacing: 0.35em;
 text-transform: uppercase;
 color: var(--gold-light);
+background: rgba(10,22,40,0.35);
 border: 2px solid rgba(200,169,94,1.0);
 padding: 0.61rem 1.62rem;
 margin-bottom: 2.5rem;
-text-shadow: 0 1px 12px rgba(0,0,0,0.6);
+text-shadow: 0 1px 3px rgba(0,0,0,0.85);
 animation: heroFadeIn 1.5s ease-out 0.3s both;
 }
 
 .hero h1 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: clamp(2.53rem, 5.75vw, 5.18rem);
 font-weight: 900;
 line-height: 1;
 margin-bottom: 1.5rem;
 color: var(--white);
+text-shadow: 0 2px 4px rgba(0,0,0,0.55), 0 6px 28px rgba(0,0,0,0.6);
 animation: heroFadeIn 1.5s ease-out 0.5s both;
 }
 
 .hero h1 em {
 font-style: normal;
-color: var(--gold-light);
-font-weight: 400;
--webkit-text-stroke: 0.5px rgba(255,255,255,0.3);
-text-shadow: 0 1px 12px rgba(0,0,0,0.6);
+color: #e2c583;
+font-weight: 700;
+text-shadow: 0 2px 4px rgba(0,0,0,0.6), 0 6px 30px rgba(0,0,0,0.7);
 }
 
 .hero-tagline {
@@ -242,16 +258,18 @@ font-weight: 900;
 line-height: 1.1;
 margin-bottom: 0.75rem;
 color: var(--white);
+text-shadow: 0 2px 4px rgba(0,0,0,0.6), 0 4px 20px rgba(0,0,0,0.5);
 animation: heroFadeIn 1.5s ease-out 0.7s both;
 }
 
 .hero-sub {
 font-size: 1.15rem;
-color: rgba(255,255,255,0.9);
-font-weight: 300;
+color: rgba(255,255,255,0.96);
+font-weight: 400;
 max-width: 560px;
 margin: 0 auto 2.5rem;
 line-height: 1.7;
+text-shadow: 0 1px 3px rgba(0,0,0,0.75), 0 2px 14px rgba(0,0,0,0.5);
 animation: heroFadeIn 1.5s ease-out 0.9s both;
 }
 
@@ -266,6 +284,12 @@ animation: heroFadeIn 1.5s ease-out 1.1s both;
 min-width: 200px;
 text-align: center;
 }
+.hero .btn-outline {
+border-color: rgba(255,255,255,0.6);
+background: rgba(10,22,40,0.3);
+text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+.hero .btn-outline:hover { background: rgba(10,22,40,0.55); }
 
 .btn-primary {
 background: var(--navy);
@@ -307,10 +331,11 @@ display: flex;
 flex-direction: column;
 align-items: center;
 gap: 0.5rem;
-color: var(--text-muted);
+color: rgba(255,255,255,0.85);
 font-size: 0.65rem;
 letter-spacing: 0.2em;
 text-transform: uppercase;
+text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 animation: scrollBounce 2s infinite;
 }
 
@@ -345,7 +370,7 @@ display: block;
 }
 
 .section-title {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: clamp(2.2rem, 4vw, 3.5rem);
 font-weight: 700;
 line-height: 1.15;
@@ -372,7 +397,7 @@ position: relative;
 }
 
 #about::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: 0;
 left: 0;
@@ -397,7 +422,7 @@ overflow: hidden;
 }
 
 .about-image::after {
-content: ‘’;
+content: '';
 position: absolute;
 bottom: 0;
 left: 0;
@@ -427,7 +452,7 @@ border-top: 1px solid rgba(10,22,40,0.08);
 }
 
 .stat-item .stat-num {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 2.8rem;
 color: var(--forest);
 line-height: 1;
@@ -477,7 +502,7 @@ margin-bottom: 0.75rem;
 }
 
 .board-card .card-name {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.2rem;
 margin-bottom: 0.5rem;
 color: var(--navy);
@@ -734,7 +759,7 @@ color: var(--white);
 }
 
 .course-hero::before {
-content: ‘’;
+content: '';
 position: absolute;
 inset: 0;
 background:
@@ -771,14 +796,14 @@ box-shadow: 0 8px 30px rgba(10,22,40,0.06);
 }
 
 .feature-card .feature-num {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 1.5rem;
 color: var(--forest);
 margin-bottom: 0.4rem;
 }
 
 .feature-card h3 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.1rem;
 margin-bottom: 0.4rem;
 color: var(--navy);
@@ -815,7 +840,7 @@ gap: 2rem;
 }
 
 .info-block h3 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.3rem;
 margin-bottom: 0.75rem;
 color: var(--navy);
@@ -888,7 +913,7 @@ color: var(--white);
 }
 
 .membership-cta-card::before {
-content: ‘’;
+content: '';
 position: absolute;
 top: -50%;
 right: -50%;
@@ -898,7 +923,7 @@ background: radial-gradient(circle, rgba(200,169,94,0.08) 0%, transparent 70%);
 }
 
 .membership-cta-card h3 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 2rem;
 margin-bottom: 1rem;
 position: relative;
@@ -1008,7 +1033,7 @@ color: white;
 }
 
 .event-date-badge .day {
-font-family: ‘Bebas Neue’, sans-serif;
+font-family: 'Bebas Neue', sans-serif;
 font-size: 1.6rem;
 line-height: 1;
 color: white;
@@ -1027,7 +1052,7 @@ margin-bottom: 0.5rem;
 }
 
 .event-card-body h3 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.2rem;
 margin-bottom: 0.5rem;
 color: var(--navy);
@@ -1094,7 +1119,7 @@ gap: 1.5rem;
 }
 
 .livetourney-banner h3 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.3rem;
 color: var(--navy);
 }
@@ -1177,7 +1202,7 @@ opacity: 1;
 }
 
 .gallery-overlay .gallery-caption {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.1rem;
 color: var(--white);
 }
@@ -1255,7 +1280,7 @@ margin-bottom: 0.75rem;
 }
 
 .news-featured-body h3 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.6rem;
 margin-bottom: 1rem;
 line-height: 1.3;
@@ -1288,7 +1313,7 @@ box-shadow: 0 8px 30px rgba(10,22,40,0.06);
 }
 
 .news-card h3 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.2rem;
 margin-bottom: 0.75rem;
 line-height: 1.3;
@@ -1355,7 +1380,7 @@ background: var(--cream);
 border: 1px solid rgba(10,22,40,0.12);
 color: var(--text-dark);
 padding: 0.9rem 1rem;
-font-family: ‘Source Sans 3’, sans-serif;
+font-family: 'Source Sans 3', sans-serif;
 font-size: 0.95rem;
 outline: none;
 transition: border-color 0.3s;
@@ -1389,7 +1414,7 @@ gap: 2.5rem;
 }
 
 .contact-detail h4 {
-font-family: ‘Playfair Display’, serif;
+font-family: 'Playfair Display', serif;
 font-size: 1.1rem;
 margin-bottom: 0.5rem;
 color: var(--navy);
@@ -1517,6 +1542,12 @@ border-left: 1px solid rgba(10,22,40,0.08);
 }
 .nav-links.open { right: 0; }
 .hamburger { display: flex; }
+/* The mobile menu is a white panel, so its links stay dark even over the hero */
+nav:not(.scrolled) .nav-links a { color: var(--text-body); text-shadow: none; }
+nav:not(.scrolled) .nav-links a:hover { color: var(--navy); }
+
+/* Tighter tracking keeps the badge on one line on phones */
+.hero-badge { letter-spacing: 0.2em; font-size: 0.7rem; padding: 0.55rem 1.1rem; }
 
 .section-pad { padding: 5rem 1.5rem; }
 .about-grid { grid-template-columns: 1fr; gap: 3rem; }
