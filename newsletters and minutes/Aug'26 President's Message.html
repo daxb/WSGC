@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>President's Message — August 2026 | West Seattle Golf Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f1f33;
+      --forest: #1a4d2e;
+      --gold: #a8852a;
+      --cream: #f7f5f0;
+      --white: #ffffff;
+      --text-body: #3a3a3a;
+      --text-muted: #888;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--cream);
+      color: var(--text-body);
+      min-height: 100vh;
+    }
+    header {
+      background: var(--navy);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    header a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    header a:hover { color: var(--white); }
+    header span { color: rgba(255,255,255,0.3); }
+    main {
+      max-width: 720px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--forest);
+      font-weight: 600;
+    }
+    .date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 2.5rem;
+    }
+    .letter {
+      background: var(--white);
+      border: 1px solid rgba(10,22,40,0.08);
+      padding: 3rem;
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+    .letter p { margin-bottom: 1.5rem; }
+    .letter p:last-child { margin-bottom: 0; }
+    .letter .aside {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .letter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin: 2.5rem 0 1.25rem;
+    }
+    .bracket {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(168,133,42,0.05);
+    }
+    .bracket li {
+      padding: 0.4rem 0;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .bracket li:not(:last-child) {
+      border-bottom: 1px solid rgba(10,22,40,0.06);
+    }
+    .bracket li span {
+      font-weight: 400;
+      color: var(--text-muted);
+      padding: 0 0.5rem;
+    }
+    .signature {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(10,22,40,0.08);
+      font-weight: 600;
+      color: var(--navy);
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--forest); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .quote {
+      margin: 0 0 1.5rem;
+      padding: 1.5rem 1.75rem;
+      border-left: 3px solid var(--forest);
+      background: rgba(26,77,46,0.04);
+      font-size: 0.98rem;
+    }
+    .quote p { margin-bottom: 1.25rem; }
+    .quote p:last-child { margin-bottom: 0; }
+    .quote-credit {
+      display: block;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .roster {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(168,133,42,0.05);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.35rem 1.5rem;
+    }
+    .roster li {
+      padding: 0.25rem 0;
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.9rem;
+    }
+    .schedule {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 0;
+    }
+    .schedule li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(10,22,40,0.06);
+      font-size: 0.95rem;
+    }
+    .schedule li:last-child { border-bottom: none; }
+    .schedule li strong { color: var(--navy); }
+    .letter a { color: var(--forest); }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="../index.html">← Back to WSGC</a>
+  <span>/</span>
+  <a href="../index.html#news">News &amp; Updates</a>
+</header>
+
+<main>
+  <div class="meta">
+    <span class="tag">President's Message</span>
+    <span class="date">August 2026</span>
+  </div>
+  <h1>Dunkel Takes the Title in a 37-Hole Final</h1>
+
+  <div class="letter">
+    <p>Greetings to our West Seattle membership and fellow golfers this fine summer of 2026. It's been a few months since we updated you on the season, what lies ahead, and some fun golf happenings at the course above Fauntleroy Creek and below Camp Long.</p>
+
+    <p>First off, the Club Championship concluded this week: a knockdown, dragout 37-hole donnybrook between three-time champion Andrew Coghill and longtime member Eric Dunkel. Here is the result, in Andrew's words:</p>
+
+    <div class="quote">
+      <p>It was another glorious day at West Seattle Golf Course on August 18th for a 36-hole club championship match to remember.</p>
+      <p>We were fortunate to play both rounds with semi-finalist Andy Wood and 2025 Club Champion Milo Stover. Colin Gants checked in on us several times throughout the rounds to offer encouragement, and our club president Ted Irwin hopped on Dunkel's bag for the second 18. Their extra interest and support added another memorable element to an already wonderful day on the course.</p>
+      <p>Eric set the tone early in the first round, birdieing 4 and 6 for an outward nine of 35. He added birdies on 14 and 15 for a 69 and a three-up lead heading into the final 18. In the heat of the afternoon round, he did what he needed to do to get the win, ending his second straight match on the first sudden-death playoff hole.</p>
+      <p>My hat's off to Eric for passing the test of this summer-long six-round event to earn the title of Club Champion.</p>
+    </div>
+    <span class="quote-credit">— Andrew Coghill, runner-up</span>
+
+    <p>For the runner-up to have the grace and class to write about a match he lost tells you everything you need to know about Andrew Coghill. And the deserving champion, Eric Dunkel, was due for the title — his ball-striking talent and unique approach to the game have impressed us all in previous tournaments, like when he shot a 71 with only three clubs (and no putter) a few years back. A fabulous final indeed.</p>
+
+    <p>Also of note, veteran Larry Daniels eked in a short putt to beat Patrick Distefano by one shot in the 36-hole Senior Men's Club Championship. This event is getting more and more competitive as the demographics age.</p>
+
+    <h2>A New Tournament This November: The Coyote Howl</h2>
+
+    <p>One of my initiatives that I brought to our board was to add one more stern test of golf, will, and determination to our schedule. This is not a direct replacement for the pro shop's Devil's Nassau, which has been laying in a coffin for several years, but it will still be a very difficult day of golf with a long layout in the belly of mid-November weather.</p>
+
+    <p>Expect the tees somewhere near the back of the blacks (close to 7,000 yards), and the hole locations tucked on aggravatingly sloped edges of our greens. No wacky crisscross holes to navigate — just straightforward, painful golf that will make many of us howl, much like the local coyote population.</p>
+
+    <p>This tourney will have a limited field due to place of play, and a shotgun start. No senior or ladies tees. We recommend higher handicaps avoid the carnage.</p>
+
+    <p>On the docket, we still have Fall Field Day in September and the 666 in October as well. The treasurer reports the club remains in a solid financial position, and there will also be a Holiday Party.</p>
+
+    <h2>Course Drainage Work — and Plenty of World Cup Sand</h2>
+
+    <p>You probably noticed course workers busily carving up various trouble spots that tend to get soggy (and stay soggy). Our fearless superintendent, Rocky, has kept records and is focused on fixes by removing the turf, adding sand layers, and resodding or seeding as needed — most notably on #9, #10, #18, #5 and others.</p>
+
+    <p>Since sand isn't cheap, this was a nice windfall from the city; Lumen Field removed the material after the World Cup. Our club is also supporting the course maintenance crew with a pizza lunch for their hard work.</p>
+
+    <h2>Seattle Cup 2026: Going for the Threepeat</h2>
+
+    <p>Starting August 22nd and ending at Interbay on August 29th, our West Seattle team led by captains Aron DeFaccio, Ben Tang, Patrick Distefano and Mark Sullivan will march out their picks against the other three municipal course clubs — Jackson Park, Interbay, and Jefferson Park (aka Bill Wright's).</p>
+
+    <ul class="roster">
+      <li>Garrett Gants</li>
+      <li>Chandler St. Louis</li>
+      <li>Milo Stover</li>
+      <li>Pat DiStefano</li>
+      <li>Dan Barker</li>
+      <li>Aron DeFaccio</li>
+      <li>Brian Sherick</li>
+      <li>Brendan Hopps</li>
+      <li>Kellen Sundin</li>
+      <li>Beau Gants</li>
+      <li>Jack Walsh</li>
+      <li>Tom Morris</li>
+      <li>Ben Tang</li>
+      <li>Don Schriver</li>
+      <li>James Burdon</li>
+      <li>Mark Sullivan</li>
+      <li>Doug Marshall</li>
+      <li>Matt Labella</li>
+      <li>Ryan Flohr</li>
+      <li>Joey Bates</li>
+      <li>Jordo Nichols</li>
+      <li>Mike Palumbo</li>
+      <li>Nisvet Talic</li>
+      <li>Dax Colwell</li>
+    </ul>
+
+    <ul class="schedule">
+      <li><strong>Saturday 8/22</strong> — Jackson Fourball</li>
+      <li><strong>Sunday 8/23</strong> — Bill Wright Scramble</li>
+      <li><strong>Saturday 8/29</strong> — West Seattle Chapman</li>
+      <li><strong>Sunday 8/30</strong> — Interbay Singles</li>
+    </ul>
+
+    <p>Roster, format and results are on Golf Genius: <a href="https://igc-seattlecup2026.golfgenius.com/pages/12971191085282912181" target="_blank" rel="noopener">Seattle Cup 2026 on Golf Genius →</a></p>
+
+    <p>Good luck fellas — kick some booty!</p>
+
+    <div class="signature">— Ted Irwin, President</div>
+  </div>
+</main>
+
+<footer>
+  <p><a href="../index.html">West Seattle Golf Club</a> &nbsp;·&nbsp; Est. 1940</p>
+</footer>
+
+</body>
+</html>
