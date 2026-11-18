@@ -133,6 +133,11 @@ Then save it as a new file:
 > for the image file `media/MY-FILE.jpg` with the caption "_______" and date "Month Year".
 > Match the existing markup exactly.
 
+**Add a photo to the gallery page (`gallery.html`):**
+> In daxb/WSGC gallery.html, near the "ADD A PHOTO TO THE GALLERY PAGE" comment, write me a
+> figure entry for `media/MY-FILE.jpg` with the caption "_______" and date "Month Year", for the
+> "_______" section. Match the existing markup exactly.
+
 **Add or update an event:**
 > In daxb/WSGC index.html, near the "ADD OR UPDATE AN EVENT" comment, write me an event card for
 > "Event Name" on DATE, format "_______", with this description: "_______". Match the existing markup.
@@ -149,6 +154,7 @@ Then save it as a new file:
    matching anchor name to jump to the right spot:
    - President's message / news → search **`NEWS / PRESIDENT'S MESSAGE`**
    - Gallery photo → search **`ADD A GALLERY PHOTO`**
+   - Photo on the gallery page → open **`gallery.html`** instead and search **`ADD A PHOTO TO THE GALLERY PAGE`**
    - Event → search **`ADD OR UPDATE AN EVENT`**
    - Board member → search **`BOARD OF DIRECTORS`**
 4. You'll see a clearly-marked comment block with instructions and a template. **Paste the snippet
