@@ -188,6 +188,27 @@
     .stats li:not(:last-child) {
       border-bottom: 1px solid rgba(10,22,40,0.06);
     }
+    .photo {
+      margin: 0 0 1.5rem;
+    }
+    .photo img { width: 100%; display: block; }
+    .photo figcaption, .photo-grid figcaption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 0 0 1.5rem;
+    }
+    .photo-grid figure { margin: 0; }
+    .photo-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+    @media (max-width: 768px) {
+      .letter { padding: 2rem 1.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -243,7 +264,19 @@
       <li>Nobody from rival Interbay cracked the top three in gross or net in any flight. Maybe the course was just too tough for those range monkeys ;)</li>
     </ul>
 
-    <p>All in all, it was a fine day. Even one of our precious coyotes scored a fat squirrel on the 4th hole!</p>
+    <div class="photo-grid">
+      <figure><img src="../media/Coyote-Howl-trophy.jpeg" alt="A golfer holds up the Coyote Howl trophy behind a coyote pelt in the Fox Den" loading="lazy"></figure>
+      <figure><img src="../media/Coyote-Howl-survivors.jpeg" alt="Three golfers celebrate with arms raised after their round" loading="lazy"></figure>
+      <figure><img src="../media/Coyote-Howl-prize-table.jpeg" alt="The Coyote Howl prize table with trophy and coyote pelts" loading="lazy"></figure>
+      <figure><img src="../media/Coyote-Howl-thumbs-up.jpeg" alt="A young golfer gives two thumbs up behind the Coyote Howl trophy" loading="lazy"></figure>
+    </div>
+
+    <p>All in all, it was a fine day. Even one of our precious coyotes scored a fat squirrel on the 4th hole — see photo by Nicole Stone!</p>
+
+    <figure class="photo">
+      <img src="../media/Coyote-Howl-coyote-squirrel.jpeg" alt="A coyote on the course carrying a squirrel in its mouth" loading="lazy">
+      <figcaption>A course coyote with its catch on #4. Photo: Nicole Stone</figcaption>
+    </figure>
 
     <h2>One Calendar Note</h2>
 
