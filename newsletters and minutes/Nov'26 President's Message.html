@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>President's Message — November 2026 | West Seattle Golf Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f1f33;
+      --forest: #1a4d2e;
+      --gold: #a8852a;
+      --cream: #f7f5f0;
+      --white: #ffffff;
+      --text-body: #3a3a3a;
+      --text-muted: #888;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: var(--cream);
+      color: var(--text-body);
+      min-height: 100vh;
+    }
+    header {
+      background: var(--navy);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    header a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    header a:hover { color: var(--white); }
+    header span { color: rgba(255,255,255,0.3); }
+    main {
+      max-width: 720px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--forest);
+      font-weight: 600;
+    }
+    .date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 2.5rem;
+    }
+    .letter {
+      background: var(--white);
+      border: 1px solid rgba(10,22,40,0.08);
+      padding: 3rem;
+      line-height: 1.85;
+      font-size: 1rem;
+    }
+    .letter p { margin-bottom: 1.5rem; }
+    .letter p:last-child { margin-bottom: 0; }
+    .letter .aside {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .letter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin: 2.5rem 0 1.25rem;
+    }
+    .bracket {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(168,133,42,0.05);
+    }
+    .bracket li {
+      padding: 0.4rem 0;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .bracket li:not(:last-child) {
+      border-bottom: 1px solid rgba(10,22,40,0.06);
+    }
+    .bracket li span {
+      font-weight: 400;
+      color: var(--text-muted);
+      padding: 0 0.5rem;
+    }
+    .signature {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(10,22,40,0.08);
+      font-weight: 600;
+      color: var(--navy);
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    footer a { color: var(--forest); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .quote {
+      margin: 0 0 1.5rem;
+      padding: 1.5rem 1.75rem;
+      border-left: 3px solid var(--forest);
+      background: rgba(26,77,46,0.04);
+      font-size: 0.98rem;
+    }
+    .quote p { margin-bottom: 1.25rem; }
+    .quote p:last-child { margin-bottom: 0; }
+    .quote-credit {
+      display: block;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .roster {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(168,133,42,0.05);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.35rem 1.5rem;
+    }
+    .roster li {
+      padding: 0.25rem 0;
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.9rem;
+    }
+    .schedule {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 0;
+    }
+    .schedule li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(10,22,40,0.06);
+      font-size: 0.95rem;
+    }
+    .schedule li:last-child { border-bottom: none; }
+    .schedule li strong { color: var(--navy); }
+    .letter a { color: var(--forest); }
+    .shoutouts {
+      margin: 0 0 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .shoutouts li { margin-bottom: 1.1rem; padding-left: 0.25rem; }
+    .shoutouts li::marker { color: var(--gold); font-weight: 600; }
+    .stats {
+      list-style: none;
+      margin: 0 0 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(168,133,42,0.05);
+    }
+    .stats li {
+      padding: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+    .stats li:not(:last-child) {
+      border-bottom: 1px solid rgba(10,22,40,0.06);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="../index.html">← Back to WSGC</a>
+  <span>/</span>
+  <a href="../index.html#news">News &amp; Updates</a>
+</header>
+
+<main>
+  <div class="meta">
+    <span class="tag">President's Message</span>
+    <span class="date">November 2026</span>
+  </div>
+  <h1>Season Shout-Outs and Coyote Howl Scat</h1>
+
+  <div class="letter">
+    <p>Greetings West Seattle Golf Membership,</p>
+
+    <p>As the 2026 season winds down for many, it's time to <em>shout out</em> to all involved who made this golf season a memorable &amp; often rewarding one out here on Fauntleroy Creek:</p>
+
+    <ol class="shoutouts">
+      <li>Incredible maintenance by Rocky and his hardworking crew for keeping this municipal golf course in excellent playing condition despite high traffic, limited staff, a constrained budget, and challenging weather. Whether it seems too hot, too wet, too windy or too dark, the crew buffs out our greens, traps and fairways, all while taking on drainage projects, irrigation systems, and the pestering general public. Thank you very much maintenance crew, especially veteran Mike Houchens.</li>
+      <li>Likewise, kudos to the fantastic restaurant and Fox Den staff who feed us, pour us libations, and also join us on the course with eager golfing attitudes. The same applies to Colin's pro shop staff, including our marshals. I am convinced that because the West Seattle golf course staff are part of our club and often work here because they love the game, we all benefit. This is not Bushwood Country Club with a snob factor or caste system; it's an inclusive community.</li>
+      <li>Your West Seattle Golf Club board of directors and officers, whose primary job is to promote member golf through competition &amp; social activity. Our new volunteer reward system, implemented by all the directors, successfully supported events at a low cost. And with the hard work &amp; steady direction of Tournament Director Aron DeFaccio implementing the new Live Tourney service, tournament administration has become more efficient &amp; easier.</li>
+      <li>Behind it all, the hardest working board member, Treasurer Mike Little, has kept our books in fine condition, consistently reporting a solid financial foundation. This is one of the jobs that we need the next generation of board members to take an interest in — more on that below. Also, thank you, VP Ben Tang, Handicap chair Garrett Gants &amp; Secretary Beau Gants for adeptly tackling their officer responsibilities. Plus, thank you Milo Stover for running our Wednesday night league while in college, working in the golf shop <em>and</em> playing a lot of competitive golf.....!!</li>
+      <li>Director Wendy Gapp led the West Seattle women to a victory in what I think was the first Women's Seattle Cup, supported by our club with wardrobe sponsorship. They brought home a nice piece of hardware currently sitting in the Fox Den.</li>
+    </ol>
+
+    <p>To all: Bravo!</p>
+
+    <h2>Get Involved: 2027 Board Openings</h2>
+
+    <p>That said, it is the time of year we look for new directors and/or officers for 2027. If you are <strong>interested in getting involved</strong>, there are 3, 2 &amp; 1 year positions and we are currently determining where the vacancies will be. You can also run for an officer position, if approved by the nomination committee. Normally, directors move into officer positions as needed once they understand the role(s), among other considerations. If we have multiple candidates, we will hold an election in December.</p>
+
+    <p>Please contact both myself &amp; Ben Tang if you're interested: <a href="mailto:president@westseattlegolfclub.org">president@westseattlegolfclub.org</a> and <a href="mailto:vicepresident@westseattlegolfclub.org">vicepresident@westseattlegolfclub.org</a></p>
+
+    <h2>Coyote Howl Scat</h2>
+
+    <p>Despite the monsoon threat, it was a glorious weather day for the inaugural tournament, with about 100 participants. The amount of rain during the week prevented the greens crew from rolling the greens, so we did not have as difficult a day as possible with the slower greens; however, the carnage was still apparent. I backed off on a few more severe hole placements, and learned a lot about tipping and tucking. Thanks to Colin for assisting in course set-up. Send your complaints to Jackson Park Golf Course.</p>
+
+    <p>Here's a few rough statistics from the back of my napkin:</p>
+
+    <ul class="stats">
+      <li>Low net for the entire tournament was even par(!) by <strong>Brian Sherick</strong>, who is the low gross champion as well. The veteran big man out of Spokane, a Seattle Cup team stalwart and West Seattle resident, never recorded a birdie with his new broomstick putter, and apparently never needed one. Nice work, Brian.</li>
+      <li>First Flight had 25 players with handicaps of 4 or lower, and only 8 players broke 80 (low gross was 75, +3).</li>
+      <li>All those skilled players combined for 29 birdies in 450 holes.</li>
+      <li>47 players were in triple digits (100+ shots).</li>
+      <li>Runner-up Garrett Gants shot one-under 34 on the back nine, as did three-time club champ Andrew Coghill. Both were tripped up on the front nine chasing squirrels.</li>
+      <li>46 total birdies for the field, and the skins (or coyote pelts) by flight paid nicely for those able to throw daggers.</li>
+      <li>5 players won two skins: legendary tournament director Doug Marshall snagged two, as did former club champions Milo Stover and Andrew Coghill. In Fourth Flight, Sean Becker, Zachary Blachon and Tom Hammack all got two pelts.</li>
+      <li>Nobody from rival Interbay cracked the top three in gross or net in any flight. Maybe the course was just too tough for those range monkeys ;)</li>
+    </ul>
+
+    <p>All in all, it was a fine day. Even one of our precious coyotes scored a fat squirrel on the 4th hole!</p>
+
+    <h2>One Calendar Note</h2>
+
+    <p>Our annual Christmas Party (banquet with live holiday jazz courtesy of longtime member Dan Kramlich) is slated for <strong>Saturday, December 19th</strong>. We will send a separate email reminder and sign-up information. Normally it is a plus-one event, which is likely again.</p>
+
+    <p>All the best,</p>
+
+    <div class="signature">— Ted Irwin, President</div>
+  </div>
+</main>
+
+<footer>
+  <p><a href="../index.html">West Seattle Golf Club</a> &nbsp;·&nbsp; Est. 1940</p>
+</footer>
+
+</body>
+</html>
