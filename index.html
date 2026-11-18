@@ -1213,6 +1213,25 @@ color: rgba(255,255,255,0.75);
 margin-top: 0.25rem;
 }
 
+.gallery-link {
+text-align: center;
+margin-top: 1rem;
+}
+
+.gallery-link a {
+color: var(--forest);
+text-decoration: none;
+font-size: 0.75rem;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+font-weight: 600;
+border-bottom: 1px solid var(--gold);
+padding-bottom: 2px;
+transition: color 0.3s, border-color 0.3s;
+}
+
+.gallery-link a:hover { color: var(--forest-light); border-color: var(--forest-light); }
+
 .gallery-hint {
 text-align: center;
 margin-top: 2rem;
@@ -1732,6 +1751,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       </div>
     </div>
     <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
+    <p class="gallery-link" style="text-align:left;"><a href="gallery.html#through-the-years">See the club gallery →</a></p>
   </div>
 
   <!-- History & People Carousel -->
@@ -1796,6 +1816,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <button class="carousel-btn" onclick="scrollCarousel('peopleCarousel', 1)">→</button>
     </div>
     <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
+    <p class="gallery-link" style="text-align:left;"><a href="gallery.html#history-and-people">See the club gallery →</a></p>
   </div>
 
   <!-- Board of Directors -->
@@ -2189,6 +2210,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <button class="carousel-btn" onclick="scrollCarousel('eventPhotosCarousel', 1)">→</button>
   </div>
   <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
+  <p class="gallery-link" style="text-align:left;"><a href="gallery.html#tournament-days">See the club gallery →</a></p>
 </div>
 
   </div>
@@ -2626,6 +2648,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
 </div>
 
 <p class="gallery-hint reveal">← Swipe or drag to explore →</p>
+<p class="gallery-link reveal"><a href="gallery.html#moments-on-the-course">See the club gallery →</a></p>
 
   </div>
 </section>

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static single-page website for the **West Seattle Golf Club (WSGC)** — a member-run golf club community (not affiliated with course management). The site itself is a single self-contained file, `index.html`; the repo also carries `README.md` (overview), `TECH.md` (developer reference), a `media/` directory of photos, and a `newsletters and minutes/` directory of club documents.
+This is a static single-page website for the **West Seattle Golf Club (WSGC)** — a member-run golf club community (not affiliated with course management). The site itself is a single self-contained file, `index.html`, plus a standalone `gallery.html` photo page (thumbnails in `media/gallery-thumbs/`, made at ~900px with EXIF orientation applied); the repo also carries `README.md` (overview), `TECH.md` (developer reference), a `media/` directory of photos, and a `newsletters and minutes/` directory of club documents.
 
 ## Architecture
 
