@@ -1258,6 +1258,9 @@ gap: 2rem;
 margin-top: 3rem;
 }
 
+/* Time gate: anything with data-publish-at stays hidden until that time (see the script at the bottom). */
+[data-publish-at] { display: none !important; }
+
 .news-featured {
 grid-column: 1 / -1;
 display: grid;
@@ -1751,7 +1754,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       </div>
     </div>
     <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
-    <p class="gallery-link" style="text-align:left;"><a href="gallery.html#through-the-years">See the club gallery →</a></p>
+    <p data-publish-at="2026-11-20T09:00:00-08:00" class="gallery-link" style="text-align:left;"><a href="gallery.html#through-the-years">See the club gallery →</a></p>
   </div>
 
   <!-- History & People Carousel -->
@@ -1774,23 +1777,23 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
            </div>
            - - - - - - - - - - - -
            ============================================================ -->
-      <div class="gallery-item">
+      <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
         <div class="gallery-img" style="background:url('media/Coyote-Howl-coyote-squirrel.jpeg') center/cover;"></div>
         <div class="gallery-overlay"><span class="gallery-caption">A course coyote scores a fat squirrel on #4 — photo by Nicole Stone</span><span class="gallery-date">November 2026</span></div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
         <div class="gallery-img" style="background:url('media/Coyote-Howl-trophy.jpeg') center/cover;"></div>
         <div class="gallery-overlay"><span class="gallery-caption">Coyote Howl hardware in the Fox Den</span><span class="gallery-date">November 2026</span></div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
         <div class="gallery-img" style="background:url('media/Coyote-Howl-survivors.jpeg') center/cover;"></div>
         <div class="gallery-overlay"><span class="gallery-caption">Howling after surviving the Coyote Howl</span><span class="gallery-date">November 2026</span></div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
         <div class="gallery-img" style="background:url('media/Coyote-Howl-prize-table.jpeg') center/cover;"></div>
         <div class="gallery-overlay"><span class="gallery-caption">The Coyote Howl prize table</span><span class="gallery-date">November 2026</span></div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
         <div class="gallery-img" style="background:url('media/Coyote-Howl-thumbs-up.jpeg') center/cover;"></div>
         <div class="gallery-overlay"><span class="gallery-caption">Thumbs up at the Coyote Howl</span><span class="gallery-date">November 2026</span></div>
       </div>
@@ -1836,7 +1839,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <button class="carousel-btn" onclick="scrollCarousel('peopleCarousel', 1)">→</button>
     </div>
     <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
-    <p class="gallery-link" style="text-align:left;"><a href="gallery.html#history-and-people">See the club gallery →</a></p>
+    <p data-publish-at="2026-11-20T09:00:00-08:00" class="gallery-link" style="text-align:left;"><a href="gallery.html#history-and-people">See the club gallery →</a></p>
   </div>
 
   <!-- Board of Directors -->
@@ -2204,19 +2207,19 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <h3 class="section-title" style="font-size:1.8rem;">Tournament Days</h3>
   </div>
   <div class="gallery-carousel" id="eventPhotosCarousel">
-    <div class="gallery-item">
+    <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
       <div class="gallery-img" style="background:url('media/Coyote-Howl-trophy.jpeg') center/cover;"></div>
       <div class="gallery-overlay"><span class="gallery-caption">Coyote Howl hardware in the Fox Den</span><span class="gallery-date">November 2026</span></div>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
       <div class="gallery-img" style="background:url('media/Coyote-Howl-survivors.jpeg') center/cover;"></div>
       <div class="gallery-overlay"><span class="gallery-caption">Howling after surviving the Coyote Howl</span><span class="gallery-date">November 2026</span></div>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
       <div class="gallery-img" style="background:url('media/Coyote-Howl-prize-table.jpeg') center/cover;"></div>
       <div class="gallery-overlay"><span class="gallery-caption">The Coyote Howl prize table</span><span class="gallery-date">November 2026</span></div>
     </div>
-    <div class="gallery-item">
+    <div class="gallery-item" data-publish-at="2026-11-20T09:00:00-08:00">
       <div class="gallery-img" style="background:url('media/Coyote-Howl-thumbs-up.jpeg') center/cover;"></div>
       <div class="gallery-overlay"><span class="gallery-caption">Thumbs up at the Coyote Howl</span><span class="gallery-date">November 2026</span></div>
     </div>
@@ -2246,7 +2249,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <button class="carousel-btn" onclick="scrollCarousel('eventPhotosCarousel', 1)">→</button>
   </div>
   <p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag to explore →</p>
-  <p class="gallery-link" style="text-align:left;"><a href="gallery.html#tournament-days">See the club gallery →</a></p>
+  <p data-publish-at="2026-11-20T09:00:00-08:00" class="gallery-link" style="text-align:left;"><a href="gallery.html#tournament-days">See the club gallery →</a></p>
 </div>
 
   </div>
@@ -2300,7 +2303,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
        </div>
        - - - - - - - - - - - -
        ============================================================ -->
-  <div class="news-featured">
+  <div class="news-featured" data-publish-at="2026-11-20T09:00:00-08:00">
     <div class="news-featured-img"><span class="placeholder-icon">🏆</span></div>
     <div class="news-featured-body">
       <span class="news-tag">President's Message</span>
@@ -2310,7 +2313,17 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <span class="news-date" style="margin-top:1rem;display:block;">November 2026</span>
     </div>
   </div>
-  <div class="news-card reveal">
+  <div class="news-featured" data-unpublish-at="2026-11-20T09:00:00-08:00">
+    <div class="news-featured-img"><span class="placeholder-icon">🐾</span></div>
+    <div class="news-featured-body">
+      <span class="news-tag">Tournament</span>
+      <h3>The Coyote Howl: Registration Is Open</h3>
+      <p>The final club tournament of 2026 is a ball-busting, tip-and-tuck test of golf that owes its DNA to the old Devil's Nassau. Everyone plays from the back of the blacks — no senior or ladies tees — at hole locations that may well produce your highest round of the year. Bring extra sleeves, and if you make a birdie, let out a feral "HOWL." Saturday, November 14, 10:30am shotgun, limited to the first 108 players. A logoed long-sleeve top is included in the entry fee (add your size when you sign up), with gross and net payouts across divisions plus optional cash side games. No banquet (we're saving for the December Christmas event), but the kitchen and Fox Den will be open.</p>
+      <a href="https://www.livetourney.com/t/18428" class="read-more" target="_blank" rel="noopener">Register on LiveTourney →</a>
+      <span class="news-date" style="margin-top:1rem;display:block;">October 2026</span>
+    </div>
+  </div>
+  <div class="news-card reveal" data-publish-at="2026-11-20T09:00:00-08:00">
     <span class="news-tag">Tournament</span>
     <h3>Coyote Howl Results: Sherick Tames the Beast</h3>
     <p>About 100 players took on the inaugural Coyote Howl on November 14, and the carnage was real: only 8 First Flight players broke 80, 47 players finished in triple digits, and the whole field managed just 46 birdies. Brian Sherick took low net at even par and low gross as well, all without a single birdie. Garrett Gants was runner-up, and Doug Marshall, Milo Stover, Andrew Coghill, Sean Becker, Zachary Blachon and Tom Hammack each collected two skins (coyote pelts).</p>
@@ -2691,7 +2704,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
 </div>
 
 <p class="gallery-hint reveal">← Swipe or drag to explore →</p>
-<p class="gallery-link reveal"><a href="gallery.html#moments-on-the-course">See the club gallery →</a></p>
+<p data-publish-at="2026-11-20T09:00:00-08:00" class="gallery-link reveal"><a href="gallery.html#moments-on-the-course">See the club gallery →</a></p>
 
   </div>
 </section>
@@ -2854,6 +2867,17 @@ document.querySelectorAll('.gallery-carousel, .events-carousel').forEach(carouse
 })();
 
 // ===== SCROLL REVEAL =====
+// Time gate: show [data-publish-at] items once their time has passed, and remove [data-unpublish-at] items then.
+(function () {
+  var now = Date.now();
+  document.querySelectorAll('[data-publish-at]').forEach(function (el) {
+    if (now >= Date.parse(el.getAttribute('data-publish-at'))) el.removeAttribute('data-publish-at');
+  });
+  document.querySelectorAll('[data-unpublish-at]').forEach(function (el) {
+    if (now >= Date.parse(el.getAttribute('data-unpublish-at'))) el.remove();
+  });
+})();
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

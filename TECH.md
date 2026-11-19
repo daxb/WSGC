@@ -234,6 +234,10 @@ When a `.reveal` element enters the viewport (10% threshold), `.visible` is adde
 
 ---
 
+### Time gate (scheduled publishing)
+
+To stage home page content ahead of time, add `data-publish-at="2026-11-20T09:00:00-08:00"` (ISO time with offset) to any element. CSS hides it until the script at the start of the reveal code removes the attribute once the visitor's clock passes that time. `data-unpublish-at` does the reverse and removes the element at that time (use it on the card being replaced). Content is still in the page source, and visitors without JavaScript never see gated items. Once the time has passed, the attributes can be deleted.
+
 ## Responsive Breakpoints
 
 | Breakpoint | Behavior |
