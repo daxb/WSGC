@@ -59,6 +59,6 @@ npx serve .
 Non-technical club volunteers edit the site by submitting Pull Requests (Copilot Free drafts the
 HTML, they paste it, Dax reviews/merges). See `EDITING.md` (source of truth) and
 `docs/editing-guide.html` (printable). **Do not remove or rename the HTML-comment anchor blocks**
-in `index.html` (`NEWS / PRESIDENT'S MESSAGE`, `ADD A GALLERY PHOTO`, `ADD OR UPDATE AN EVENT`,
+in `index.html` (`LATEST NEWSLETTER BANNER`, `NEWS / PRESIDENT'S MESSAGE`, `ADD A GALLERY PHOTO`, `ADD OR UPDATE AN EVENT`,
 `BOARD OF DIRECTORS`) — the volunteer guide and Copilot prompts locate edits by searching for
 that exact text. If you restructure a section, update the matching anchor and `EDITING.md` together.
