@@ -1309,6 +1309,30 @@ gap: 2rem;
 margin-top: 3rem;
 }
 
+/* From the Clubhouse scrolls sideways: newest card first, swipe on phones,
+   arrow buttons and keyboard arrows on desktop. */
+.news-grid.news-carousel {
+display: flex;
+align-items: stretch;
+gap: 1.5rem;
+overflow-x: auto;
+scroll-snap-type: x mandatory;
+-webkit-overflow-scrolling: touch;
+scrollbar-width: none;
+padding-bottom: 1rem;
+cursor: grab;
+}
+.news-carousel::-webkit-scrollbar { display: none; }
+.news-carousel:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.news-carousel > * { flex-shrink: 0; scroll-snap-align: start; }
+.news-carousel > .news-featured { width: 720px; }
+.news-carousel > .news-card { width: 340px; display: flex; flex-direction: column; }
+.news-carousel > .news-card .read-more { margin-top: auto; }
+.news-carousel .news-featured-img { min-height: 0; }
+.news-carousel .news-featured-body { padding: 2.5rem; }
+/* Cards off to the side would otherwise wait for a scroll to fade in */
+.news-carousel .reveal { opacity: 1; transform: none; }
+
 /* Time gate: anything with data-publish-at stays hidden until that time (see the script at the bottom). */
 [data-publish-at] { display: none !important; }
 
@@ -1629,6 +1653,11 @@ nav:not(.scrolled) .nav-links a:hover { color: var(--navy); }
 .course-features { grid-template-columns: 1fr; }
 .news-grid { grid-template-columns: 1fr; }
 .news-featured { grid-template-columns: 1fr; }
+.news-carousel > .news-featured,
+.news-carousel > .news-card { width: 85vw; }
+.news-carousel .news-featured-img { min-height: 90px; }
+.news-carousel .news-featured-body { padding: 1.75rem; }
+.news-carousel > .news-card { padding: 1.75rem; }
 .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
 .form-row { grid-template-columns: 1fr; }
 .gallery-carousel { padding: 0 1.5rem 1rem; }
@@ -2330,7 +2359,7 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
       <p class="section-desc">Tournament recaps, club announcements, newsletters, and everything happening in the WSGC world.</p>
     </div>
 
-<div class="news-grid reveal">
+<div class="news-grid news-carousel reveal" id="newsCarousel" tabindex="0" role="region" aria-label="Club news, newest first. Scroll sideways for older posts.">
   <!-- ============================================================
        NEWS / PRESIDENT'S MESSAGE — newest item goes at the TOP.
        The first card (.news-featured) is the big highlighted one; the rest are .news-card.
@@ -2412,6 +2441,11 @@ background: linear-gradient(to right, transparent, rgba(10,22,40,0.1), transpare
     <span class="news-date" style="margin-top:1rem;display:block;">April 2026</span>
   </div>
 </div>
+<div class="carousel-nav">
+  <button class="carousel-btn" onclick="scrollCarousel('newsCarousel', -1)" aria-label="Newer posts">←</button>
+  <button class="carousel-btn" onclick="scrollCarousel('newsCarousel', 1)" aria-label="Older posts">→</button>
+</div>
+<p class="gallery-hint" style="text-align:left;margin-top:1rem;">← Swipe or drag for older posts →</p>
 
     <div class="minutes-accordion-wrap reveal">
       <details class="minutes-accordion">
@@ -2896,12 +2930,12 @@ function toggleTidbits(btn) {
 // ===== CAROUSEL SCROLL =====
 function scrollCarousel(id, dir) {
   const el = document.getElementById(id);
-  const cardWidth = el.querySelector(':scope > *').offsetWidth + 24;
+  const cardWidth = el.querySelector(':scope > :last-child').offsetWidth + 24;
   el.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
 }
 
 // ===== TOUCH/DRAG SWIPE FOR GALLERY =====
-document.querySelectorAll('.gallery-carousel, .events-carousel').forEach(carousel => {
+document.querySelectorAll('.gallery-carousel, .events-carousel, .news-carousel').forEach(carousel => {
   let isDown = false, startX, scrollLeft;
 
   carousel.addEventListener('mousedown', e => {
@@ -2919,6 +2953,15 @@ document.querySelectorAll('.gallery-carousel, .events-carousel').forEach(carouse
     const walk = (x - startX) * 1.5;
     carousel.scrollLeft = scrollLeft - walk;
   });
+});
+
+// News carousel: a mouse drag over a card shouldn't also open its link.
+document.querySelectorAll('.news-carousel').forEach(carousel => {
+  let downX = 0;
+  carousel.addEventListener('mousedown', e => { downX = e.pageX; });
+  carousel.addEventListener('click', e => {
+    if (Math.abs(e.pageX - downX) > 6) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
 });
 
 // ===== EVENTS CAROUSEL: SCROLL TO NEXT UPCOMING =====
