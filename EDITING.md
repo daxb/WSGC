@@ -124,6 +124,12 @@ Then save it as a new file:
 > file `newsletters and minutes/MON'YY President's Message.html`. Also show me how to turn the
 > current featured card into a regular news card. Match the existing HTML and classes exactly.
 
+*Part 3 — point the top banner at the new message.* The slim "Latest Newsletter" bar at the very
+top of the home page sits under the comment "LATEST NEWSLETTER BANNER". Change the file name in its
+link, the month, and the title to match the new message (or ask Copilot to: "In daxb/WSGC index.html,
+update the LATEST NEWSLETTER BANNER to point to `newsletters and minutes/MON'YY President's Message.html`,
+month "Month Year", title "_______"").
+
 **A news update:**
 > In daxb/WSGC index.html, near the "NEWS / PRESIDENT'S MESSAGE" comment, write me a regular
 > news card titled "_______", summary "_______", dated "Month Year". Match the existing markup.
